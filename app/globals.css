@@ -102,13 +102,12 @@ button {
   padding: 10px;
 }
 
-/* 10-column grid like BajGames */
+/* Fluid grid like BajGames — fills full viewport at any zoom */
 .game-grid-wall {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 10px;
-  max-width: 1500px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* Each game item — square with shadow */
@@ -483,20 +482,7 @@ button {
   color: #c0c0c0;
 }
 
-/* ─── Larger screens — more columns ─── */
-@media (min-width: 1600px) {
-  .game-grid-wall {
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 1800px;
-  }
-}
-
-@media (min-width: 2000px) {
-  .game-grid-wall {
-    grid-template-columns: repeat(15, 1fr);
-    max-width: 2200px;
-  }
-}
+/* Grid auto-fills at all screen sizes — no breakpoint overrides needed */
 
 /* ─── Game Subtitle (detail page) ─── */
 .game-subtitle {

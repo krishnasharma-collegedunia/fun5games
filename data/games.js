@@ -4,10 +4,13 @@
  * Each game has: apkg (Android package), iid (iOS ID), icon URL.
  *
  * ICON IMAGES: Using verified Apple CDN icon URLs (512x512).
+ * SCREENSHOTS: Real gameplay screenshots from Apple App Store.
  * All URLs verified fresh as of April 2026.
  *
  * TO ADD A GAME: Add to rawGames[] with apkg and iid.
  */
+
+import screenshotMap from './screenshots';
 
 const rawGames = [
   // === FEATURED HERO — Free Fire ===
@@ -214,11 +217,8 @@ export const games = rawGames.map((g, index) => {
     trending: g.trend || false,
     icon: g.img,
     thumbnail: g.img,
-    screenshots: [
-      `https://picsum.photos/seed/${slug}-s1/800/450`,
-      `https://picsum.photos/seed/${slug}-s2/800/450`,
-      `https://picsum.photos/seed/${slug}-s3/800/450`,
-      `https://picsum.photos/seed/${slug}-s4/800/450`,
+    screenshots: screenshotMap[g.iid] || [
+      `https://placehold.co/800x450/6d28d9/white?text=${encodeURIComponent(g.title)}`,
     ],
     androidUrl: g.apkg ? `https://play.google.com/store/apps/details?id=${g.apkg}` : null,
     iosUrl: g.iid ? `https://apps.apple.com/app/id${g.iid}` : null,
