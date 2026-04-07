@@ -61,6 +61,9 @@ export default function GamePage({ params }) {
   return (
     <main className="page-content">
       <div className="container">
+        {/* AD SLOT: Top leaderboard — above breadcrumbs */}
+        <AdBanner type="leaderboard" />
+
         <div className="breadcrumbs">
           <Link href="/">Home</Link>
           <span className="sep">›</span>
@@ -81,13 +84,8 @@ export default function GamePage({ params }) {
               />
               <div className="game-info-text">
                 <h1>{game.title}</h1>
-                <div className="game-info-row">
-                  <span className={`category-badge badge-${game.category.toLowerCase()}`}>
-                    {game.category}
-                  </span>
-                  <Stars rating={game.rating} />
-                  <span style={{ fontSize: '13px', color: '#666' }}>{game.downloads} downloads</span>
-                </div>
+                <p className="game-subtitle">Game {game.category}</p>
+                <Stars rating={game.rating} />
               </div>
             </div>
 
@@ -118,21 +116,31 @@ export default function GamePage({ params }) {
               </div>
             </div>
 
+            {/* AD SLOT: Between metadata and CTA — like BajGames */}
             <AdBanner type="detail" />
 
             <CtaSection game={game} />
+
+            {/* AD SLOT: After CTA, before description */}
+            <AdBanner type="detail" />
 
             <div className="section-block">
               <h2>About This Game</h2>
               <p>{game.shortDescription}</p>
             </div>
 
+            <ScreenshotGallery screenshots={game.screenshots} title={game.title} />
+
+            {/* AD SLOT: Between screenshots and description */}
+            <AdBanner type="detail" />
+
             <div className="section-block">
               <h2>Description</h2>
               <p>{game.longDescription}</p>
             </div>
 
-            <ScreenshotGallery screenshots={game.screenshots} title={game.title} />
+            {/* AD SLOT: After description */}
+            <AdBanner type="detail" />
 
             {related.length > 0 && (
               <div className="related-section">
@@ -144,6 +152,9 @@ export default function GamePage({ params }) {
                 </div>
               </div>
             )}
+
+            {/* AD SLOT: Bottom of main content */}
+            <AdBanner type="leaderboard" />
           </div>
 
           <Sidebar games={sidebarGames} excludeId={game.id} />
