@@ -98,14 +98,14 @@ button {
 /* ─── Homepage Full-Bleed (BajGames clone) ─── */
 .homepage-full {
   min-height: 100vh;
-  background: #f0f0f0;
+  background: #ffffff;
   padding: 10px;
 }
 
-/* Fluid grid like BajGames — fills full viewport at any zoom */
+/* Grid matching BajGames exact breakpoints */
 .game-grid-wall {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
 }
@@ -482,7 +482,22 @@ button {
   color: #c0c0c0;
 }
 
-/* Grid auto-fills at all screen sizes — no breakpoint overrides needed */
+/* BajGames exact responsive breakpoints */
+@media (min-width: 544px) {
+  .game-grid-wall { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 764px) {
+  .game-grid-wall { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+}
+@media (min-width: 1204px) {
+  .game-grid-wall { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+}
+@media (min-width: 1534px) {
+  .game-grid-wall { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+}
+@media (min-width: 1864px) {
+  .game-grid-wall { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
 
 /* ─── Game Subtitle (detail page) ─── */
 .game-subtitle {
