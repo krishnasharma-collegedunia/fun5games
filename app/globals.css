@@ -95,40 +95,56 @@ button {
   padding: 20px 0;
 }
 
-/* ─── Homepage Full-Bleed ─── */
+/* ─── Homepage Full-Bleed (BajGames clone) ─── */
 .homepage-full {
   min-height: 100vh;
-  background: #e8e0f0;
+  background: #f0f0f0;
+  padding: 10px;
 }
 
-.icon-grid-full {
+/* 10-column grid like BajGames */
+.game-grid-wall {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 3px;
-  padding: 3px;
-  background: #e8e0f0;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
-.icon-grid-full .game-icon-card {
-  border-radius: 14px;
-  aspect-ratio: 1;
+/* Each game item — square with shadow */
+.game-item {
+  position: relative;
+  border-radius: 8px;
   overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 3px;
+  transition: transform 0.15s;
   display: block;
-  transition: transform 0.15s, box-shadow 0.15s;
-  background: #d0c8e0;
+  background: #e0e0e0;
 }
 
-.icon-grid-full .game-icon-card:hover {
-  transform: scale(1.06);
+.game-item:hover {
+  transform: scale(1.05);
   z-index: 2;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-.icon-grid-full .game-icon-img {
+/* Featured first item — 2x2 like BajGames */
+.item-featured {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.game-icon-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.game-icon-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
 /* ─── Header ─── */
@@ -467,23 +483,19 @@ button {
   color: #c0c0c0;
 }
 
-/* ─── Homepage Ad Slots ─── */
-.home-ad-top {
-  padding: 8px 16px;
-  background: #e8e0f0;
-  text-align: center;
+/* ─── Larger screens — more columns ─── */
+@media (min-width: 1600px) {
+  .game-grid-wall {
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1800px;
+  }
 }
 
-.home-ad-row {
-  padding: 8px 16px;
-  background: #e8e0f0;
-  text-align: center;
-}
-
-.home-ad-bottom {
-  padding: 8px 16px;
-  background: #e8e0f0;
-  text-align: center;
+@media (min-width: 2000px) {
+  .game-grid-wall {
+    grid-template-columns: repeat(15, 1fr);
+    max-width: 2200px;
+  }
 }
 
 /* ─── Game Subtitle (detail page) ─── */
@@ -1122,14 +1134,13 @@ button {
 }
 
 @media (max-width: 768px) {
-  .icon-grid-full {
-    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
-    gap: 2px;
-    padding: 2px;
+  .game-grid-wall {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
   }
 
-  .icon-grid-full .game-icon-card {
-    border-radius: 12px;
+  .homepage-full {
+    padding: 6px;
   }
 
   .header-inner {
@@ -1215,14 +1226,21 @@ button {
 }
 
 @media (max-width: 480px) {
-  .icon-grid-full {
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    gap: 2px;
-    padding: 1px;
+  .game-grid-wall {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
   }
 
-  .icon-grid-full .game-icon-card {
-    border-radius: 10px;
+  .homepage-full {
+    padding: 4px;
+  }
+
+  .game-item {
+    border-radius: 6px;
+  }
+
+  .game-icon-img {
+    border-radius: 6px;
   }
 
   .game-grid {
