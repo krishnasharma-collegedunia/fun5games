@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { games } from '@/data/games';
 import GameCard from '@/components/GameCard';
 
-const bigSlugs = new Set(['free-fire', 'pubg-mobile', 'subway-surfers', 'minecraft']);
+const bigSlugs = new Set(['free-fire', 'pubg-mobile', 'subway-surfers', 'temple-run-2']);
 
 export default function HomePage() {
   const [visibleCount, setVisibleCount] = useState(200);
