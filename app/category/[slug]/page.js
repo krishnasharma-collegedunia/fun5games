@@ -2,17 +2,21 @@ import { games, categories, getGamesByCategory } from '@/data/games';
 import GameCard from '@/components/GameCard';
 import AdBanner from '@/components/AdBanner';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.toLowerCase() }));
 }
 
+export const dynamicParams = false;
+
 export function generateMetadata({ params }) {
   const cat = categories.find((c) => c.toLowerCase() === params.slug);
   const name = cat || params.slug;
   return {
-    title: `${name} Games - GameVault`,
-    description: `Browse the best ${name} mobile games. Find top-rated ${name.toLowerCase()} games to play on Android and iOS.`,
+    title: `Best ${name} Mobile Games`,
+    description: `Browse hand-picked ${name.toLowerCase()} mobile games for Android and iOS on Fun5Games. Reviews, how-to-play guides, tips and direct links to the Google Play Store and Apple App Store.`,
+    alternates: { canonical: `/category/${params.slug}` },
   };
 }
 
@@ -20,15 +24,7 @@ export default function CategoryPage({ params }) {
   const cat = categories.find((c) => c.toLowerCase() === params.slug);
 
   if (!cat) {
-    return (
-      <main className="page-content">
-        <div className="container no-results">
-          <h2>Category Not Found</h2>
-          <p>No games found for this category.</p>
-          <Link href="/" style={{ color: '#2d9f2d', fontWeight: 600 }}>Back to Home</Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const catGames = getGamesByCategory(cat);

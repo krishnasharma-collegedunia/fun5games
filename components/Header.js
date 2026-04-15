@@ -19,34 +19,36 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
+    <header className="header header-minimal">
       <div className="header-inner">
-        <Link href="/" className="logo">
-          <span className="logo-icon">GV</span>
-          GameVault
+        <Link href="/" className="logo" aria-label="Fun5Games home">
+          <span className="logo-icon">F5</span>
+          Fun5Games
         </Link>
 
-        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+        <form className="search-form" onSubmit={handleSearch} role="search">
+          <input
+            type="text"
+            placeholder="Search games..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search games"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`} aria-label="Primary">
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/category/action" onClick={() => setMenuOpen(false)}>Categories</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </nav>
 
-        <form className="search-form" onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search games..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button type="submit">Search</button>
-        </form>
-
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? '✕' : '☰'}
         </button>

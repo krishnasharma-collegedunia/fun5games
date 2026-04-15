@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { games, getGameBySlug, getRelatedGames, getSidebarGames } from '@/data/games';
+import { getGameContent } from '@/data/gameContent';
 import Stars from '@/components/Stars';
 import AdBanner from '@/components/AdBanner';
 import Sidebar from '@/components/Sidebar';
@@ -13,30 +15,38 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
   const game = getGameBySlug(params.slug);
-  if (!game) return { title: 'Game Not Found - GameVault' };
+  if (!game) return { title: 'Game Not Found' };
   return {
-    title: `${game.title} - Download on GameVault`,
+    title: `${game.title} - How to Play, Tips & Download Guide`,
     description: game.shortDescription,
+    alternates: { canonical: `/game/${game.slug}` },
+    openGraph: {
+      title: `${game.title} - Fun5Games`,
+      description: game.shortDescription,
+      type: 'article',
+      url: `/game/${game.slug}`,
+      images: game.icon ? [{ url: game.icon, alt: game.title }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${game.title} - Fun5Games`,
+      description: game.shortDescription,
+    },
   };
 }
+
+export const dynamicParams = false;
 
 export default function GamePage({ params }) {
   const game = getGameBySlug(params.slug);
 
   if (!game) {
-    return (
-      <main className="page-content">
-        <div className="container no-results">
-          <h2>Game Not Found</h2>
-          <p>The game you are looking for does not exist.</p>
-          <Link href="/" style={{ color: '#2d9f2d', fontWeight: 600 }}>Back to Home</Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const related = getRelatedGames(game, 8);
   const sidebarGames = getSidebarGames(game.id, 15);
+  const content = getGameContent(game);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -116,31 +126,74 @@ export default function GamePage({ params }) {
               </div>
             </div>
 
-            {/* AD SLOT: Between metadata and CTA — like BajGames */}
-            <AdBanner type="detail" />
+            {/* AD SLOT: Big hero ad between metadata and download section — BajGames style */}
+            <AdBanner type="detail-hero" />
 
             <CtaSection game={game} />
 
-            {/* AD SLOT: After CTA, before description */}
+            {/* AD SLOT: After download section, before description */}
             <AdBanner type="detail" />
 
             <div className="section-block">
-              <h2>About This Game</h2>
+              <h2>About {game.title}</h2>
               <p>{game.shortDescription}</p>
+              <p>{game.longDescription}</p>
             </div>
 
             <ScreenshotGallery screenshots={game.screenshots} title={game.title} />
 
-            {/* AD SLOT: Between screenshots and description */}
-            <AdBanner type="detail" />
-
+            {/* How to Play */}
             <div className="section-block">
-              <h2>Description</h2>
-              <p>{game.longDescription}</p>
+              <h2>How to Play {game.title}</h2>
+              <ol className="how-to-play-steps">
+                {content.howToPlay.map((step, i) => (
+                  <li key={i}>
+                    <strong>{step.step}</strong>
+                    <p>{step.desc}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
 
-            {/* AD SLOT: After description */}
             <AdBanner type="detail" />
+
+            {/* Tips & Tricks */}
+            <div className="section-block">
+              <h2>{game.title} Tips &amp; Tricks</h2>
+              <ul className="tips-list">
+                {content.tips.map((tip, i) => (
+                  <li key={i}>{tip}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Key Features */}
+            <div className="section-block">
+              <h2>Key Features</h2>
+              <div className="features-grid">
+                {content.features.map((feat, i) => (
+                  <div key={i} className="feature-card">
+                    <h3>{feat.title}</h3>
+                    <p>{feat.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <AdBanner type="detail" />
+
+            {/* FAQ */}
+            <div className="section-block">
+              <h2>Frequently Asked Questions</h2>
+              <div className="faq-list">
+                {content.faq.map((item, i) => (
+                  <details key={i} className="faq-item">
+                    <summary>{item.q}</summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
 
             {related.length > 0 && (
               <div className="related-section">

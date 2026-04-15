@@ -6,10 +6,12 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-grid">
           <div className="footer-col">
-            <h4>GameVault</h4>
+            <h4>Fun5Games</h4>
             <p>
-              GameVault is an independent game discovery portal helping users find and explore the best mobile games.
-              We curate games across multiple categories to help you find your next favorite.
+              Fun5Games is an independent mobile game discovery portal. We hand-pick 200+ Android and
+              iOS titles across Action, Puzzle, Racing, Sports, Arcade, Casual, Strategy and Adventure,
+              and write a short how-to-play guide and tips for every game so you know what you are
+              downloading before you tap install.
             </p>
           </div>
           <div className="footer-col">
@@ -32,7 +34,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Legal</h4>
+            <h4>Legal & Info</h4>
             <ul>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/contact">Contact</Link></li>
@@ -44,11 +46,20 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="footer-disclaimer">
-            GameVault is an independent game discovery portal. We are not affiliated with, endorsed by, or connected to
-            Google Play, Apple App Store, or any game developers. All app names, logos, and trademarks belong to their
-            respective owners. We provide links to official stores for user convenience only.
+            Fun5Games is an independent game discovery portal operated by Mediafinity Adtech Pvt Ltd.
+            We are not affiliated with, endorsed by, sponsored by, or connected to Google LLC,
+            Apple Inc., Google Play, the Apple App Store, or any game developer or publisher whose
+            title appears on this site. All app names, icons, screenshots, logos and trademarks are
+            the property of their respective owners and are used for identification and editorial
+            purposes only. Download buttons link directly to the official Google Play Store and
+            Apple App Store listings — we never host or redistribute any APK or IPA files.
           </p>
-          <p>&copy; {new Date().getFullYear()} GameVault. All rights reserved.</p>
+          <p className="footer-company">
+            <strong>Mediafinity Adtech Pvt Ltd</strong> &middot; AIHP Signature Tower, 418 &amp; 419,
+            Phase IV, Udyog Vihar, Gurugram, Haryana &mdash; 122015, India &middot;{' '}
+            <a href="mailto:quizzy2026@gmail.com">quizzy2026@gmail.com</a>
+          </p>
+          <p>&copy; {new Date().getFullYear()} Mediafinity Adtech Pvt Ltd. All rights reserved. Fun5Games&trade; is a brand of Mediafinity Adtech Pvt Ltd.</p>
         </div>
       </div>
     </footer>

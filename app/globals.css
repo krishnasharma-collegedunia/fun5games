@@ -157,6 +157,56 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
+.category-strip {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.category-strip::-webkit-scrollbar {
+  display: none;
+}
+.category-strip-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.category-strip-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+.category-chip:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -462,6 +512,15 @@ button {
   max-width: 100%;
 }
 
+.ad-detail-hero {
+  padding: 20px;
+  min-height: 280px;
+  margin: 20px 0;
+  max-width: 100%;
+  background: #f8f8f8;
+  border: 1px dashed #d0d0d0;
+}
+
 .ad-banner-small {
   padding: 10px;
   min-height: 100px;
@@ -665,6 +724,120 @@ button {
   font-size: 14px;
 }
 
+/* ─── How to Play Steps ─── */
+.how-to-play-steps {
+  padding-left: 20px;
+  counter-reset: step-counter;
+}
+
+.how-to-play-steps li {
+  margin-bottom: 14px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.how-to-play-steps li strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.how-to-play-steps li p {
+  margin: 0;
+}
+
+/* ─── Tips List ─── */
+.tips-list {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.tips-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ─── Features Grid ─── */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.feature-card {
+  background: var(--bg-secondary, #f8f9fa);
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid var(--border-light);
+}
+
+.feature-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── FAQ ─── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-primary);
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  padding: 0 16px 14px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* ─── Screenshot Gallery ─── */
 .screenshot-gallery {
   padding: 16px 0;
@@ -710,79 +883,124 @@ button {
   border-color: var(--accent);
 }
 
-/* ─── CTA Section ─── */
-.cta-section {
-  background: var(--card-bg);
+/* ─── Download Section (BajGames style) ─── */
+.download-section {
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
-  text-align: center;
   margin: 20px 0;
 }
 
-.cta-section h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.cta-icons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
+.download-section-header {
   margin-bottom: 20px;
 }
 
-.cta-icon-box {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
+.download-section-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.download-section-bar {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.download-buttons {
+  display: grid;
+  gap: 12px;
+}
+
+.download-buttons.two-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+.download-buttons.one-col {
+  grid-template-columns: 1fr;
+}
+
+.download-btn {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #ffffff;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  min-height: 72px;
+}
+
+.download-btn:hover {
+  background: #f9fafb;
+  border-color: #c4c8cd;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.download-btn-google {
+  background: linear-gradient(to bottom, #ffffff, #fafbfd);
+}
+
+.download-btn-google:hover {
+  border-color: #1a73e8;
+}
+
+.download-btn-apple {
+  background: linear-gradient(to bottom, #f7f7f7, #eeeeee);
+}
+
+.download-btn-apple:hover {
+  border-color: #111111;
+}
+
+.download-btn-icon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  gap: 4px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
 }
 
-.cta-icon-box .icon-letter {
-  font-size: 22px;
+.download-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+}
+
+.download-btn-title {
+  font-size: 15px;
   font-weight: 700;
-  line-height: 1;
+  color: #1f2937;
+  line-height: 1.2;
 }
 
-.cta-icon-box.games-icon {
-  background: #eef2ff;
-  border-color: #c7d2fe;
-  color: #4338ca;
+.download-btn-subtitle {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-.cta-icon-box.apps-icon {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
-  color: #15803d;
-}
-
-.cta-continue-btn {
-  display: inline-block;
-  padding: 12px 48px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-  width: 100%;
-  max-width: 320px;
-}
-
-.cta-continue-btn:hover {
-  background: var(--accent-hover);
+@media (max-width: 640px) {
+  .download-buttons.two-cols {
+    grid-template-columns: 1fr;
+  }
+  .download-section {
+    padding: 18px;
+  }
 }
 
 /* ─── Modal / Overlay ─── */
@@ -1048,6 +1266,19 @@ button {
   opacity: 0.7;
 }
 
+.footer-company {
+  max-width: 760px;
+  margin: 6px auto 6px;
+  font-size: 11px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.footer-company a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* ─── Static Pages ─── */
 .static-page {
   max-width: 800px;
@@ -1222,8 +1453,12 @@ button {
     height: 51px;
   }
 
-  .cta-section {
+  .download-section {
     padding: 16px;
+  }
+  .ad-detail-hero {
+    min-height: 200px;
+    padding: 14px;
   }
 }
 
