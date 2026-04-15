@@ -1,0 +1,38 @@
+# ads.txt for fun5games.com
+# Owned and operated by: Mediafinity Adtech Pvt Ltd
+# Last updated: 2026-04-15
+#
+# This file authorizes specific ad networks to sell inventory on this site.
+# Format: <domain>, <publisher-id>, <DIRECT|RESELLER>, <TAG-ID (optional)>
+# Spec:   https://iabtechlab.com/ads-txt/
+#
+# ───────────────────────────────────────────────────────────────────
+# ACTIVE PARTNERS — uncomment the line when a partner shares their
+# publisher ID and we go live with their tags.
+# ───────────────────────────────────────────────────────────────────
+
+# --- Vertoz ---
+# vertoz.com, PUBLISHER_ID_HERE, DIRECT
+
+# --- Adsterra ---
+# adsterra.com, PUBLISHER_ID_HERE, DIRECT
+
+# --- PropellerAds ---
+# propellerads.com, PUBLISHER_ID_HERE, DIRECT
+
+# --- AdMaven ---
+# admaven.com, PUBLISHER_ID_HERE, DIRECT
+
+# --- Infolinks ---
+# infolinks.com, PUBLISHER_ID_HERE, DIRECT
+
+# --- Google AdSense / Ad Manager (add when approved) ---
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# --- Media.net ---
+# media.net, PUBLISHER_ID_HERE, DIRECT
+
+# ───────────────────────────────────────────────────────────────────
+# CONTACT: quizzy2026@gmail.com
+# For ad partnership enquiries or to be listed here, please reach out.
+# ───────────────────────────────────────────────────────────────────
