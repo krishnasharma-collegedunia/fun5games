@@ -48,14 +48,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // Paste the code from Google Search Console → Settings → Ownership verification → HTML tag
-    // (the content value of <meta name="google-site-verification" content="..." />)
-    google: 'REPLACE_WITH_GOOGLE_VERIFICATION_CODE',
-    // Bing / Yandex optional — add later if you submit to those too
-    // yandex: '',
-    // other: { 'msvalidate.01': '' },
-  },
+  // Google Search Console ownership is verified via the HTML file at
+  // /public/googlece58a7c96de6a893.html — served at
+  // https://fun5games.com/googlece58a7c96de6a893.html
 };
 
 export default function RootLayout({ children }) {
