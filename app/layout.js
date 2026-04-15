@@ -1,6 +1,9 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
+
+const GA_MEASUREMENT_ID = 'G-XDHX5EC9SM';
 
 export const metadata = {
   metadataBase: new URL('https://fun5games.com'),
@@ -61,6 +64,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
   );
 }
