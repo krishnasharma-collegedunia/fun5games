@@ -48,7 +48,8 @@ export default function GamePage({ params }) {
   const sidebarGames = getSidebarGames(game.id, 15);
   const content = getGameContent(game);
 
-  const jsonLd = {
+  // ─── SoftwareApplication schema (game rich result) ──────────────
+  const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: game.title,
@@ -66,6 +67,45 @@ export default function GamePage({ params }) {
       priceCurrency: 'USD',
     },
     description: game.shortDescription,
+  };
+
+  // ─── BreadcrumbList schema (Home > Category > Game) ─────────────
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://fun5games.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: game.category,
+        item: `https://fun5games.com/category/${game.category.toLowerCase()}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: game.title,
+      },
+    ],
+  };
+
+  // ─── FAQPage schema (E-E-A-T + question match) ──────────────────
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: content.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
   };
 
   return (
@@ -216,7 +256,15 @@ export default function GamePage({ params }) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </main>
   );
