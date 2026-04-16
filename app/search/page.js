@@ -4,7 +4,6 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { searchGames } from '@/data/games';
 import GameCard from '@/components/GameCard';
-import AdBanner from '@/components/AdBanner';
 import Link from 'next/link';
 
 function SearchResults() {
@@ -25,8 +24,6 @@ function SearchResults() {
           {q ? `Results for "${q}"` : 'Search Games'}
         </h1>
         <p className="search-count">{results.length} games found</p>
-
-        <AdBanner type="leaderboard" />
 
         {results.length > 0 ? (
           <div className="game-grid" style={{ marginTop: '16px' }}>

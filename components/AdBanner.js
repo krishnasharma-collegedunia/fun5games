@@ -1,48 +1,33 @@
 /*
- * AD PLACEHOLDER — Hidden by default until AdSense approval.
+ * AD SLOT — bajgames.xyz style.
  * ============================================================
- * Ad slots on fun5games.com are intentionally hidden until the site is
- * approved by Google AdSense. Showing empty placeholder boxes before
- * approval violates AdSense's content policy and looks unprofessional.
+ * fun5games.com mirrors bajgames' ad architecture: ONE big
+ * responsive banner at the bottom of each game detail page,
+ * plus an out-of-page interstitial (delivered by Adcash
+ * Autotag from components/AdcashAutotag.js).
  *
- * To re-enable placeholders during development:
- *   NEXT_PUBLIC_SHOW_AD_PLACEHOLDERS=true npm run dev
+ * Do NOT sprinkle extra AdBanner components throughout the page
+ * — the whole point of matching baji is to keep the surface
+ * minimal. One honest slot + one autotag interstitial beats
+ * six broken-looking placeholders every time.
  *
- * After AdSense is approved, replace the placeholder <div> below with the
- * real <ins className="adsbygoogle"> tag and remove the early-return guard.
+ * When AdSense is approved or an Adcash Banner zone is created,
+ * replace the placeholder <div> below with the real ad unit
+ * tag (e.g. `<ins className="adsbygoogle">` or an Adcash
+ * aclib.runBanner call).
  *
- * Supported types:
- *   leaderboard  — 728x90
- *   in-feed      — 728x90
- *   rectangle    — 300x250
- *   detail       — 728x90
- *   detail-hero  — 728x300
- *   banner-small — 320x100
- *   large-rect   — 336x280
- *   skyscraper   — 160x600
+ * Supported type:
+ *   baji-bottom — responsive multi-size bottom banner,
+ *                 min-height 310px, centered "ADVERTISEMENT"
+ *                 label, mirrors baji's `.ads > .banner-ad`.
  */
-export default function AdBanner({ type = 'leaderboard', className = '' }) {
-  // Ads are hidden until AdSense approval — policy compliance.
-  const showPlaceholders = process.env.NEXT_PUBLIC_SHOW_AD_PLACEHOLDERS === 'true';
-  if (!showPlaceholders) return null;
-
-  const config = {
-    leaderboard:   { cls: 'ad-leaderboard',  size: '728 × 90',  label: 'Advertisement' },
-    'in-feed':     { cls: 'ad-in-feed',      size: '728 × 90',  label: 'Advertisement' },
-    rectangle:     { cls: 'ad-rectangle',    size: '300 × 250', label: 'Advertisement' },
-    detail:        { cls: 'ad-detail',       size: '728 × 90',  label: 'Advertisement' },
-    'detail-hero': { cls: 'ad-detail-hero',  size: '728 × 300', label: 'Advertisement' },
-    'banner-small':{ cls: 'ad-banner-small', size: '320 × 100', label: 'Ad' },
-    'large-rect':  { cls: 'ad-large-rect',   size: '336 × 280', label: 'Advertisement' },
-    skyscraper:    { cls: 'ad-skyscraper',   size: '160 × 600', label: 'Advertisement' },
-  };
-
-  const c = config[type] || config.leaderboard;
+export default function AdBanner({ type = 'baji-bottom', className = '' }) {
+  const c = type === 'baji-bottom' ? 'ad-baji-bottom' : 'ad-baji-bottom';
 
   return (
-    <div className={`ad-banner ${c.cls} ${className}`}>
-      <span className="ad-label">{c.label}</span>
-      <span className="ad-size">{c.size}</span>
+    <div className={`ads ${className}`}>
+      <div className="ads-tips">ADVERTISEMENT</div>
+      <div className={`banner-ad ${c}`} />
     </div>
   );
 }

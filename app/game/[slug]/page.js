@@ -112,9 +112,6 @@ export default function GamePage({ params }) {
   return (
     <main className="page-content">
       <div className="container">
-        {/* AD SLOT: Top leaderboard — above breadcrumbs */}
-        <AdBanner type="leaderboard" />
-
         <div className="breadcrumbs">
           <Link href="/">Home</Link>
           <span className="sep">›</span>
@@ -169,13 +166,7 @@ export default function GamePage({ params }) {
               </div>
             </div>
 
-            {/* AD SLOT: Big hero ad between metadata and download section — BajGames style */}
-            <AdBanner type="detail-hero" />
-
             <CtaSection game={game} />
-
-            {/* AD SLOT: After download section, before description */}
-            <AdBanner type="detail" />
 
             <div className="section-block">
               <h2>About {game.title}</h2>
@@ -197,8 +188,6 @@ export default function GamePage({ params }) {
                 ))}
               </ol>
             </div>
-
-            <AdBanner type="detail" />
 
             {/* Tips & Tricks */}
             <div className="section-block">
@@ -222,8 +211,6 @@ export default function GamePage({ params }) {
                 ))}
               </div>
             </div>
-
-            <AdBanner type="detail" />
 
             {/* FAQ */}
             <div className="section-block">
@@ -249,8 +236,8 @@ export default function GamePage({ params }) {
               </div>
             )}
 
-            {/* AD SLOT: Bottom of main content */}
-            <AdBanner type="leaderboard" />
+            {/* AD SLOT: bottom banner — bajgames.xyz style (only ad on page) */}
+            <AdBanner type="baji-bottom" />
           </div>
 
           <Sidebar games={sidebarGames} excludeId={game.id} />

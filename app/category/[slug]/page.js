@@ -1,6 +1,5 @@
 import { games, categories, getGamesByCategory } from '@/data/games';
 import GameCard from '@/components/GameCard';
-import AdBanner from '@/components/AdBanner';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -75,8 +74,6 @@ export default function CategoryPage({ params }) {
             </Link>
           ))}
         </div>
-
-        <AdBanner type="leaderboard" />
 
         <div className="game-grid" style={{ marginTop: '16px' }}>
           {catGames.map((g) => (
