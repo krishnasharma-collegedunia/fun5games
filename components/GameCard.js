@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function GameCard({ game, dense, featured }) {
   const [imgError, setImgError] = useState(false);
@@ -17,13 +18,15 @@ export default function GameCard({ game, dense, featured }) {
         title={game.title}
       >
         <div className="game-icon-wrap">
-          <img
+          <Image
             className="game-icon-img"
             src={src}
             alt={game.title}
             loading={featured ? 'eager' : 'lazy'}
+            priority={featured}
             width={512}
             height={512}
+            sizes="(max-width: 600px) 25vw, (max-width: 1024px) 15vw, 150px"
             onError={() => setImgError(true)}
           />
         </div>
@@ -34,13 +37,14 @@ export default function GameCard({ game, dense, featured }) {
   const badgeClass = `category-badge badge-${game.category.toLowerCase()}`;
   return (
     <Link href={`/game/${game.slug}`} className="game-card">
-      <img
+      <Image
         className="game-card-img"
         src={src}
         alt={game.title}
         loading="lazy"
         width={400}
         height={225}
+        sizes="(max-width: 600px) 50vw, (max-width: 1024px) 33vw, 300px"
         onError={() => setImgError(true)}
       />
       <div className="game-card-body">

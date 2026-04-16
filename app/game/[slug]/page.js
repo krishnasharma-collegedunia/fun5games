@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { games, getGameBySlug, getRelatedGames, getSidebarGames } from '@/data/games';
 import { getGameContent } from '@/data/gameContent';
@@ -125,12 +126,14 @@ export default function GamePage({ params }) {
         <div className="detail-layout">
           <div className="detail-main">
             <div className="game-info-header">
-              <img
+              <Image
                 className="game-icon-large"
                 src={game.icon}
                 alt={game.title}
                 width={96}
                 height={96}
+                sizes="96px"
+                priority
               />
               <div className="game-info-text">
                 <h1>{game.title}</h1>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AdBanner from './AdBanner';
 
 export default function Sidebar({ games, excludeId }) {
@@ -15,13 +16,14 @@ export default function Sidebar({ games, excludeId }) {
         <h3>H5 Online Games</h3>
         {firstHalf.map((g) => (
           <Link href={`/game/${g.slug}`} key={g.id} className="sidebar-game">
-            <img
+            <Image
               className="sidebar-game-img"
               src={g.icon}
               alt={g.title}
               loading="lazy"
               width={48}
               height={48}
+              sizes="48px"
             />
             <div className="sidebar-game-info">
               <div className="sidebar-game-title">{g.title}</div>
@@ -44,13 +46,14 @@ export default function Sidebar({ games, excludeId }) {
           <h3>More Games</h3>
           {secondHalf.map((g) => (
             <Link href={`/game/${g.slug}`} key={g.id} className="sidebar-game">
-              <img
+              <Image
                 className="sidebar-game-img"
                 src={g.icon}
                 alt={g.title}
                 loading="lazy"
                 width={48}
                 height={48}
+                sizes="48px"
               />
               <div className="sidebar-game-info">
                 <div className="sidebar-game-title">{g.title}</div>

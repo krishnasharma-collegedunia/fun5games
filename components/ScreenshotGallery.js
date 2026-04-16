@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ScreenshotGallery({ screenshots, title }) {
   const [active, setActive] = useState(0);
@@ -10,16 +11,18 @@ export default function ScreenshotGallery({ screenshots, title }) {
   return (
     <div className="screenshot-gallery">
       <h2>Screenshots</h2>
-      <img
+      <Image
         className="screenshot-main"
         src={screenshots[active]}
         alt={`${title} screenshot ${active + 1}`}
         width={800}
         height={450}
+        sizes="(max-width: 800px) 100vw, 800px"
+        priority
       />
       <div className="screenshot-thumbs">
         {screenshots.map((src, i) => (
-          <img
+          <Image
             key={i}
             className={`screenshot-thumb ${i === active ? 'active' : ''}`}
             src={src}
@@ -28,6 +31,7 @@ export default function ScreenshotGallery({ screenshots, title }) {
             loading="lazy"
             width={120}
             height={68}
+            sizes="120px"
           />
         ))}
       </div>
