@@ -449,10 +449,10 @@ button {
 }
 
 /* ─── Ad Banner (bajgames.xyz style) ─────────────────────────
-   One minimal labeled container per page, mirroring baji's
-   `.ads > .banner-ad`. Multi-size responsive (mobile 320x100
-   → tablet 300x250/336x280 → desktop 970x250/728x90/fluid).
-   min-height 310px prevents CLS while ad loads.
+   Labeled multi-size responsive containers mirroring baji's
+   `.ads > .banner-ad`. Three size tiers: bottom (970x250
+   flagship), inline (728x90 → 336x280), sidebar (300x250).
+   min-height values prevent CLS while ads load.
    ------------------------------------------------------------ */
 .ads {
   margin: 24px auto;
@@ -473,7 +473,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 310px; /* baji: matches their `#bottomAds` CTR-safe min-height */
   background: #f5f5f5;
   border: 1px dashed #d0d0d0;
   border-radius: var(--radius-sm);
@@ -481,11 +480,26 @@ button {
   margin: 0 auto;
 }
 
+/* Flagship bottom slot — fits a 970x250 on desktop, 300x250 on mobile. */
 .ad-baji-bottom {
-  /* Allows the widest fluid creatives (970x250) on desktop
-     while the min-height reserves CTR-safe space on mobile.   */
   max-width: 970px;
   width: 100%;
+  min-height: 310px;
+}
+
+/* Mid-content inline slot — fits 728x90 on desktop, 336x280 on mobile. */
+.ad-baji-inline {
+  max-width: 728px;
+  width: 100%;
+  min-height: 250px;
+}
+
+/* Sidebar rectangle — locked to standard MPU size. */
+.ad-baji-sidebar {
+  max-width: 300px;
+  width: 100%;
+  min-height: 250px;
+  margin: 0 auto 16px;
 }
 
 /* BajGames exact responsive breakpoints */
@@ -1402,10 +1416,13 @@ button {
   .download-section {
     padding: 16px;
   }
-  /* Tighter ad height on small screens — baji uses 300x250/320x100
-     which comfortably fits within 260px. */
-  .banner-ad {
+  /* Tighter ad heights on small screens — baji uses 300x250/320x100
+     which comfortably fits within 260/210px. */
+  .ad-baji-bottom {
     min-height: 260px;
+  }
+  .ad-baji-inline {
+    min-height: 210px;
   }
 }
 

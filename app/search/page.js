@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { searchGames } from '@/data/games';
 import GameCard from '@/components/GameCard';
+import AdBanner from '@/components/AdBanner';
 import Link from 'next/link';
 
 function SearchResults() {
@@ -25,12 +26,19 @@ function SearchResults() {
         </h1>
         <p className="search-count">{results.length} games found</p>
 
+        {/* AD: Top of search results */}
+        <AdBanner type="baji-inline" />
+
         {results.length > 0 ? (
-          <div className="game-grid" style={{ marginTop: '16px' }}>
-            {results.map((g) => (
-              <GameCard key={g.id} game={g} />
-            ))}
-          </div>
+          <>
+            <div className="game-grid" style={{ marginTop: '16px' }}>
+              {results.map((g) => (
+                <GameCard key={g.id} game={g} />
+              ))}
+            </div>
+            {/* AD: Bottom of search results */}
+            <AdBanner type="baji-bottom" />
+          </>
         ) : (
           <div className="no-results">
             <h2>No games found</h2>

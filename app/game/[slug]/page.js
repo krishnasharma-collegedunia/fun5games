@@ -112,6 +112,9 @@ export default function GamePage({ params }) {
   return (
     <main className="page-content">
       <div className="container">
+        {/* AD 1: Top leaderboard — above breadcrumbs */}
+        <AdBanner type="baji-inline" />
+
         <div className="breadcrumbs">
           <Link href="/">Home</Link>
           <span className="sep">›</span>
@@ -166,7 +169,13 @@ export default function GamePage({ params }) {
               </div>
             </div>
 
+            {/* AD 2: Hero slot between metadata and CTA */}
+            <AdBanner type="baji-bottom" />
+
             <CtaSection game={game} />
+
+            {/* AD 3: After download section, before about */}
+            <AdBanner type="baji-inline" />
 
             <div className="section-block">
               <h2>About {game.title}</h2>
@@ -175,6 +184,9 @@ export default function GamePage({ params }) {
             </div>
 
             <ScreenshotGallery screenshots={game.screenshots} title={game.title} />
+
+            {/* AD 4: After screenshots */}
+            <AdBanner type="baji-inline" />
 
             {/* How to Play */}
             <div className="section-block">
@@ -188,6 +200,9 @@ export default function GamePage({ params }) {
                 ))}
               </ol>
             </div>
+
+            {/* AD 5: Between how-to-play and tips */}
+            <AdBanner type="baji-inline" />
 
             {/* Tips & Tricks */}
             <div className="section-block">
@@ -211,6 +226,9 @@ export default function GamePage({ params }) {
                 ))}
               </div>
             </div>
+
+            {/* AD 6: Between features and FAQ */}
+            <AdBanner type="baji-inline" />
 
             {/* FAQ */}
             <div className="section-block">

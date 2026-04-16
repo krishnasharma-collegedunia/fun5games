@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import AdBanner from './AdBanner';
 
 export default function Sidebar({ games, excludeId }) {
   const filtered = games.filter((g) => g.id !== excludeId).slice(0, 15);
@@ -8,8 +9,9 @@ export default function Sidebar({ games, excludeId }) {
 
   return (
     <aside className="detail-sidebar">
-      {/* bajgames.xyz has no sidebar ads — the only page-level ad
-          is the single bottom banner on the game detail page.    */}
+      {/* SIDEBAR AD 1: Top */}
+      <AdBanner type="baji-sidebar" />
+
       <div className="sidebar-section">
         <h3>H5 Online Games</h3>
         {firstHalf.map((g) => (
@@ -35,6 +37,9 @@ export default function Sidebar({ games, excludeId }) {
           </Link>
         ))}
       </div>
+
+      {/* SIDEBAR AD 2: Between game lists */}
+      <AdBanner type="baji-sidebar" />
 
       {secondHalf.length > 0 && (
         <div className="sidebar-section">
@@ -63,6 +68,9 @@ export default function Sidebar({ games, excludeId }) {
           ))}
         </div>
       )}
+
+      {/* SIDEBAR AD 3: Bottom */}
+      <AdBanner type="baji-sidebar" />
     </aside>
   );
 }
