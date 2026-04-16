@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AdcashAutotag from '@/components/AdcashAutotag';
+import AdSenseScript from '@/components/AdSenseScript';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
@@ -135,6 +136,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <AdcashAutotag />
+        <AdSenseScript />
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>

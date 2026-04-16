@@ -1,21 +1,32 @@
 # ads.txt for fun5games.com
 # Owned and operated by: Mediafinity Adtech Pvt Ltd
-# Last updated: 2026-04-15
+# Last updated: 2026-04-16
 #
 # This file authorizes specific ad networks to sell inventory on this site.
 # Format: <domain>, <publisher-id>, <DIRECT|RESELLER>, <TAG-ID (optional)>
 # Spec:   https://iabtechlab.com/ads-txt/
 #
 # ───────────────────────────────────────────────────────────────────
-# ACTIVE PARTNERS — uncomment the line when a partner shares their
-# publisher ID and we go live with their tags.
+# ACTIVE PARTNERS
+# ───────────────────────────────────────────────────────────────────
+
+# --- Adcash ---
+# Uncomment once Adcash moderation approves the site.
+# The exact line to paste is shown in Adcash Dashboard →
+# Settings → ads.txt (personalized per publisher).
+# adcash.com, PUBLISHER_ID_HERE, DIRECT, d7c018a074d6bb65
+
+# --- Google AdSense ---
+# Uncomment + replace pub-XXXXXXXXXXXXXXXX with your real AdSense
+# publisher ID (AdSense Dashboard → Account → Account information).
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# ───────────────────────────────────────────────────────────────────
+# BACKUP / BENCH (not integrated on-site yet)
 # ───────────────────────────────────────────────────────────────────
 
 # --- Vertoz ---
 # vertoz.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- Adsterra ---
-# adsterra.com, PUBLISHER_ID_HERE, DIRECT
 
 # --- PropellerAds ---
 # propellerads.com, PUBLISHER_ID_HERE, DIRECT
@@ -25,9 +36,6 @@
 
 # --- Infolinks ---
 # infolinks.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- Google AdSense / Ad Manager (add when approved) ---
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
 
 # --- Media.net ---
 # media.net, PUBLISHER_ID_HERE, DIRECT
