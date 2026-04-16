@@ -12,32 +12,17 @@ export default function HomePage() {
   const visible = games.slice(0, visibleCount);
   const hasMore = visibleCount < games.length;
 
-  // Mid-grid ad slot: between row ~3 (25 tiles on desktop 10-col,
-  // 15 on tablet 7-col) and row ~4. Picked 25 so it sits just
-  // below the fold on mobile (4 cols × 6 rows) without pushing the
-  // first ad too far down.
-  const midSplit = 25;
-  const topTiles = visible.slice(0, midSplit);
-  const restTiles = visible.slice(midSplit);
-
   return (
     <main className="homepage-full">
+      {/* AD: Banner above the game grid — never interleaved with tiles,
+          so the 10-col wall stays visually intact. */}
+      <AdBanner type="baji-inline" />
+
       <div className="game-grid-wall">
-        {topTiles.map((g) => (
+        {visible.map((g) => (
           <GameCard key={g.id} game={g} dense featured={bigSlugs.has(g.slug)} />
         ))}
       </div>
-
-      {/* AD: In-feed mid-grid on the homepage */}
-      <AdBanner type="baji-inline" />
-
-      {restTiles.length > 0 && (
-        <div className="game-grid-wall">
-          {restTiles.map((g) => (
-            <GameCard key={g.id} game={g} dense featured={bigSlugs.has(g.slug)} />
-          ))}
-        </div>
-      )}
 
       {hasMore && (
         <div className="load-more-wrapper">
@@ -50,7 +35,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* AD: Bottom of homepage */}
+      {/* AD: Banner below the full grid, above the footer */}
       <AdBanner type="baji-bottom" />
     </main>
   );
