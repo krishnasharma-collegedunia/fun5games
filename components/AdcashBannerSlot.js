@@ -5,50 +5,55 @@ import { useEffect, useRef } from 'react';
 /**
  * Adcash banner zone.
  *
- * Renders a placeholder div that Adcash's aclib.js fills with a
- * banner creative based on the zone ID. Works alongside Adcash
- * Autotag (Autotag = pop/interstitial/in-page-push; this is a
- * dedicated banner zone for static placements).
+ * Adcash's integration snippet is:
  *
- * Setup:
- *   1. In adcash.myadcash.com → create a Zone → choose "Banner"
- *      format → pick a size (300x250 or 728x90 recommended).
- *   2. Copy the zoneId from the dashboard.
- *   3. Set NEXT_PUBLIC_ADCASH_BANNER_ZONE_BOTTOM in .env.
- *   4. Build + restart. The slot fills automatically.
+ *     <div>
+ *       <script>aclib.runBanner({ zoneId: 'XXXXXX' });</script>
+ *     </div>
+ *
+ * The script MUST be a child of the target div because Adcash's
+ * runBanner uses `document.currentScript.parentElement` to locate
+ * the container it should inject the creative into.
+ *
+ * React won't execute <script> tags written via JSX or
+ * dangerouslySetInnerHTML, so we build and append a real script
+ * element in useEffect after we confirm aclib is ready.
  *
  * aclib.js is already loaded site-wide by AdcashAutotag.js, so we
- * only need to call runBanner() once the <div id="..."> is mounted.
+ * only need to wait for it to be present on window.
  */
 export default function AdcashBannerSlot({ zoneId }) {
+  const containerRef = useRef(null);
   const mountedRef = useRef(false);
-  const containerId = `adcash-banner-${zoneId}`;
 
   useEffect(() => {
     if (mountedRef.current) return;
+    if (!containerRef.current) return;
     mountedRef.current = true;
 
-    // Wait until aclib is on the window (loaded by AdcashAutotag).
-    // In practice the script is set to afterInteractive, so on a
-    // hard navigation it may not yet be ready when this effect runs.
-    const tryRun = (attempts = 0) => {
+    const inject = (attempts = 0) => {
       if (typeof window === 'undefined') return;
       if (window.aclib && typeof window.aclib.runBanner === 'function') {
+        // Create an inline script *inside* the target div so Adcash
+        // can resolve the container through document.currentScript.
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.text = `aclib.runBanner({ zoneId: '${zoneId}' });`;
         try {
-          window.aclib.runBanner({ zoneId });
+          containerRef.current.appendChild(script);
         } catch (e) {
           // Swallow — one bad banner shouldn't break the page.
         }
         return;
       }
-      // Give up after ~5s; the script isn't going to arrive.
+      // aclib isn't on window yet — retry up to ~5s.
       if (attempts < 50) {
-        setTimeout(() => tryRun(attempts + 1), 100);
+        setTimeout(() => inject(attempts + 1), 100);
       }
     };
 
-    tryRun();
+    inject();
   }, [zoneId]);
 
-  return <div id={containerId} className="adcash-banner-target" />;
+  return <div ref={containerRef} className="adcash-banner-target" />;
 }
