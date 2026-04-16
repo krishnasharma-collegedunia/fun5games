@@ -11,10 +11,12 @@
 # ───────────────────────────────────────────────────────────────────
 
 # --- Adcash ---
-# Uncomment once Adcash moderation approves the site.
-# The exact line to paste is shown in Adcash Dashboard →
-# Settings → ads.txt (personalized per publisher).
-# adcash.com, PUBLISHER_ID_HERE, DIRECT, d7c018a074d6bb65
+# Account ID 1172402 (quizzy2026@gmail.com).
+# Website ID 1598146 (fun5games.com). Zone qdabofupyz (Autotag).
+# Speculative line using Adcash's publicly documented format.
+# Verify against Adcash Dashboard → Websites → edit fun5games.com →
+# ads.txt section, or ask Adcash live chat. Update if different.
+adcash.com, 1172402, DIRECT, d7c018a074d6bb65
 
 # --- Google AdSense ---
 # Uncomment + replace pub-XXXXXXXXXXXXXXXX with your real AdSense
