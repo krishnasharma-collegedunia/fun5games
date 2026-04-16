@@ -14,7 +14,11 @@
 # --- Vertoz ---
 # vertoz.com, PUBLISHER_ID_HERE, DIRECT
 
-# --- Adsterra ---
+# --- Adsterra (approved April 2026, Popunder placement 29159531) ---
+# Ad script domain: pl29159531.profitablecpmratenetwork.com
+# NOTE: Replace PUBLISHER_ID below with the exact line Adsterra gives you at
+# Dashboard → Websites → fun5games.com → ABOUT → Ads.txt tab. Format is:
+#   adsterra.com, 1234567, DIRECT
 # adsterra.com, PUBLISHER_ID_HERE, DIRECT
 
 # --- PropellerAds ---

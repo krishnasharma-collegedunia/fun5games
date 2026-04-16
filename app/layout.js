@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AdsterraPopunder from '@/components/AdsterraPopunder';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
@@ -133,6 +134,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <AdsterraPopunder />
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
