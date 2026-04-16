@@ -1,6 +1,5 @@
 import { games, categories, getGamesByCategory } from '@/data/games';
 import GameCard from '@/components/GameCard';
-import AdBanner from '@/components/AdBanner';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -63,9 +62,6 @@ export default function CategoryPage({ params }) {
         <h1 className="category-heading">{cat} Games</h1>
         <p className="category-count">{catGames.length} games found</p>
 
-        {/* AD: Top of category page */}
-        <AdBanner type="baji-inline" />
-
         <div className="category-bar">
           <Link href="/" className="category-btn">All Games</Link>
           {categories.map((c) => (
@@ -84,9 +80,6 @@ export default function CategoryPage({ params }) {
             <GameCard key={g.id} game={g} />
           ))}
         </div>
-
-        {/* AD: Bottom of category page */}
-        <AdBanner type="baji-bottom" />
       </div>
     </main>
   );

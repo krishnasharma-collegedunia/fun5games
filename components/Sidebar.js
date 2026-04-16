@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import AdBanner from './AdBanner';
 
+// bajgames.xyz has no sidebar ads on game pages — all banner
+// inventory lives in the single bottom slot at the end of the
+// main column. We mirror that: sidebar is content-only, and
+// Adcash Autotag from layout.js delivers the interstitial.
 export default function Sidebar({ games, excludeId }) {
   const filtered = games.filter((g) => g.id !== excludeId).slice(0, 15);
   const firstHalf = filtered.slice(0, 7);
@@ -9,9 +12,6 @@ export default function Sidebar({ games, excludeId }) {
 
   return (
     <aside className="detail-sidebar">
-      {/* SIDEBAR AD 1: Top */}
-      <AdBanner type="baji-sidebar" />
-
       <div className="sidebar-section">
         <h3>H5 Online Games</h3>
         {firstHalf.map((g) => (
@@ -37,9 +37,6 @@ export default function Sidebar({ games, excludeId }) {
           </Link>
         ))}
       </div>
-
-      {/* SIDEBAR AD 2: Between game lists */}
-      <AdBanner type="baji-sidebar" />
 
       {secondHalf.length > 0 && (
         <div className="sidebar-section">
@@ -68,9 +65,6 @@ export default function Sidebar({ games, excludeId }) {
           ))}
         </div>
       )}
-
-      {/* SIDEBAR AD 3: Bottom */}
-      <AdBanner type="baji-sidebar" />
     </aside>
   );
 }

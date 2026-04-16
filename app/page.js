@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import { games } from '@/data/games';
 import GameCard from '@/components/GameCard';
-import AdBanner from '@/components/AdBanner';
 
 const bigSlugs = new Set(['free-fire', 'pubg-mobile', 'subway-surfers', 'temple-run-2']);
 
+// bajgames.xyz homepage has ZERO banner ads — only the GPT
+// interstitial (fires once per session from layout-level script).
+// We mirror that: no AdBanner slots here. Adcash Autotag in
+// layout.js is the equivalent of baji's preloaded interstitial.
 export default function HomePage() {
   const [visibleCount, setVisibleCount] = useState(200);
   const visible = games.slice(0, visibleCount);
@@ -14,10 +17,6 @@ export default function HomePage() {
 
   return (
     <main className="homepage-full">
-      {/* AD: Banner above the game grid — never interleaved with tiles,
-          so the 10-col wall stays visually intact. */}
-      <AdBanner type="baji-inline" />
-
       <div className="game-grid-wall">
         {visible.map((g) => (
           <GameCard key={g.id} game={g} dense featured={bigSlugs.has(g.slug)} />
@@ -34,9 +33,6 @@ export default function HomePage() {
           </button>
         </div>
       )}
-
-      {/* AD: Banner below the full grid, above the footer */}
-      <AdBanner type="baji-bottom" />
     </main>
   );
 }
