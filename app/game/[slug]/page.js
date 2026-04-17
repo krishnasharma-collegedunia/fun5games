@@ -122,6 +122,9 @@ export default function GamePage({ params }) {
 
         <div className="detail-layout">
           <div className="detail-main">
+            {/* AD SLOT 1: top banner — above game info (baji position) */}
+            <AdBanner type="baji-bottom" />
+
             <div className="game-info-header">
               <Image
                 className="game-icon-large"
@@ -165,6 +168,9 @@ export default function GamePage({ params }) {
                 <div className="meta-value">{game.price}</div>
               </div>
             </div>
+
+            {/* AD SLOT 2: below metadata row — above CTA (baji position) */}
+            <AdBanner type="baji-bottom" />
 
             <CtaSection game={game} />
 
@@ -236,8 +242,6 @@ export default function GamePage({ params }) {
               </div>
             )}
 
-            {/* AD SLOT: bottom banner — bajgames.xyz style (only ad on page) */}
-            <AdBanner type="baji-bottom" />
           </div>
 
           <Sidebar games={sidebarGames} excludeId={game.id} />

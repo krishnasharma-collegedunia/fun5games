@@ -3,24 +3,13 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Adcash banner zone.
+ * Adcash banner zone (self-contained).
  *
- * Adcash's integration snippet is:
- *
- *     <div>
- *       <script>aclib.runBanner({ zoneId: 'XXXXXX' });</script>
- *     </div>
- *
- * The script MUST be a child of the target div because Adcash's
- * runBanner uses `document.currentScript.parentElement` to locate
- * the container it should inject the creative into.
- *
- * React won't execute <script> tags written via JSX or
- * dangerouslySetInnerHTML, so we build and append a real script
- * element in useEffect after we confirm aclib is ready.
- *
- * aclib.js is already loaded site-wide by AdcashAutotag.js, so we
- * only need to wait for it to be present on window.
+ * Loads aclib.js on demand if not already present (Monetag now
+ * handles popup/push/interstitial, so aclib.js is no longer loaded
+ * globally by an Autotag component). Then injects the Adcash banner
+ * creative into the target div via the documented inline-script
+ * pattern.
  */
 export default function AdcashBannerSlot({ zoneId }) {
   const containerRef = useRef(null);
@@ -31,23 +20,27 @@ export default function AdcashBannerSlot({ zoneId }) {
     if (!containerRef.current) return;
     mountedRef.current = true;
 
+    // Ensure aclib.js is loaded (may already be if another slot loaded it).
+    if (!document.getElementById('adcash-aclib-loader')) {
+      const s = document.createElement('script');
+      s.id = 'adcash-aclib-loader';
+      s.src = '//acscdn.com/script/aclib.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
     const inject = (attempts = 0) => {
       if (typeof window === 'undefined') return;
       if (window.aclib && typeof window.aclib.runBanner === 'function') {
-        // Create an inline script *inside* the target div so Adcash
-        // can resolve the container through document.currentScript.
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.text = `aclib.runBanner({ zoneId: '${zoneId}' });`;
         try {
           containerRef.current.appendChild(script);
-        } catch (e) {
-          // Swallow — one bad banner shouldn't break the page.
-        }
+        } catch (e) {}
         return;
       }
-      // aclib isn't on window yet — retry up to ~5s.
-      if (attempts < 50) {
+      if (attempts < 80) {
         setTimeout(() => inject(attempts + 1), 100);
       }
     };
