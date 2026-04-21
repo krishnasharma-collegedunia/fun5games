@@ -32,7 +32,16 @@ const SITEMAP_URL = `https://${HOST}/sitemap.xml`;
 // IndexNow accepts POSTs at api.indexnow.org which fans out to
 // all participating engines (Bing, Yandex, Naver, Seznam, etc.).
 // DuckDuckGo uses Bing's index so it picks up the change via Bing.
-const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
+//
+// Bing's direct endpoint (bing.com/indexnow) tends to verify and
+// accept on the very first submission; api.indexnow.org can 403
+// with SiteVerificationNotCompleted on first use until the shared
+// verifier catches up. We try Bing first, fall back to the generic
+// endpoint for Yandex/Naver/Seznam.
+const INDEXNOW_ENDPOINTS = [
+  'https://www.bing.com/indexnow',
+  'https://api.indexnow.org/indexnow',
+];
 
 // Per-request limit from the IndexNow spec.
 const MAX_URLS_PER_REQUEST = 10000;
@@ -99,6 +108,22 @@ function postJson(url, body) {
   });
 }
 
+async function pingEndpoint(endpoint, batch) {
+  const body = {
+    host: HOST,
+    key: KEY,
+    keyLocation: KEY_LOCATION,
+    urlList: batch,
+  };
+  try {
+    const res = await postJson(endpoint, body);
+    const ok = res.status === 200 || res.status === 202;
+    return { endpoint, ok, status: res.status, body: res.body };
+  } catch (err) {
+    return { endpoint, ok: false, status: 0, body: err.message };
+  }
+}
+
 async function pingUrls(urls) {
   if (urls.length === 0) {
     console.log('No URLs to submit.');
@@ -110,28 +135,25 @@ async function pingUrls(urls) {
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
-    const body = {
-      host: HOST,
-      key: KEY,
-      keyLocation: KEY_LOCATION,
-      urlList: batch,
-    };
+    let batchAccepted = false;
 
-    try {
-      const res = await postJson(INDEXNOW_ENDPOINT, body);
-      // 200 = submitted, 202 = accepted (processing)
-      if (res.status === 200 || res.status === 202) {
-        totalSubmitted += batch.length;
+    for (const endpoint of INDEXNOW_ENDPOINTS) {
+      const result = await pingEndpoint(endpoint, batch);
+      const label = new URL(result.endpoint).hostname;
+
+      if (result.ok) {
+        if (!batchAccepted) {
+          totalSubmitted += batch.length;
+          batchAccepted = true;
+        }
         console.log(
-          `  batch ${i + 1}/${batches.length}: ${batch.length} URLs submitted (HTTP ${res.status})`
+          `  batch ${i + 1}/${batches.length} → ${label}: ${batch.length} URLs accepted (HTTP ${result.status})`
         );
       } else {
         console.error(
-          `  batch ${i + 1}/${batches.length}: FAILED (HTTP ${res.status}) — ${res.body.slice(0, 200)}`
+          `  batch ${i + 1}/${batches.length} → ${label}: HTTP ${result.status} — ${String(result.body).slice(0, 150)}`
         );
       }
-    } catch (err) {
-      console.error(`  batch ${i + 1}/${batches.length}: ERROR — ${err.message}`);
     }
   }
 
