@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { games, getGameBySlug, getRelatedGames, getSidebarGames } from '@/data/games';
 import { getGameContent } from '@/data/gameContent';
+import { getGameSeo } from '@/data/gameSeo';
 import Stars from '@/components/Stars';
 import AdBanner from '@/components/AdBanner';
 import Sidebar from '@/components/Sidebar';
@@ -17,9 +18,43 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const game = getGameBySlug(params.slug);
   if (!game) return { title: 'Game Not Found' };
+
+  const seo = getGameSeo(game.slug);
+
+  // Build a keywords array with the game name, its India aliases, the
+  // category, and verified long-tail extra keywords. Google ignores the
+  // meta keywords tag, but Next writes it to <meta name="keywords"> and
+  // we also use it to drive internal content variations.
+  const keywords = [
+    game.title,
+    ...(seo.aliases || []),
+    `${game.title} download`,
+    `${game.title} tips`,
+    `${game.title} apk`,
+    `how to play ${game.title}`,
+    `${game.title} mod apk`,
+    `${game.title} guide`,
+    game.category,
+    `${game.category} games`,
+    ...(seo.extraKeywords || []),
+  ];
+
+  // Title: if this title has India aliases, include the most-searched
+  // alias in the tag so Indian search traffic matches.
+  const primaryAlias = seo.aliases && seo.aliases[0];
+  const title = primaryAlias
+    ? `${game.title} (${primaryAlias}) - How to Play, Tips & Download Guide`
+    : `${game.title} - How to Play, Tips & Download Guide`;
+
+  // Description: extend with India-aware note when relevant.
+  const description = seo.indiaNote
+    ? `${game.shortDescription} ${seo.indiaNote}`
+    : game.shortDescription;
+
   return {
-    title: `${game.title} - How to Play, Tips & Download Guide`,
-    description: game.shortDescription,
+    title,
+    description,
+    keywords,
     alternates: { canonical: `/game/${game.slug}` },
     openGraph: {
       title: `${game.title} - Fun5Games`,
@@ -48,19 +83,26 @@ export default function GamePage({ params }) {
   const related = getRelatedGames(game, 8);
   const sidebarGames = getSidebarGames(game.id, 15);
   const content = getGameContent(game);
+  const seo = getGameSeo(game.slug);
 
-  // ─── SoftwareApplication schema (game rich result) ──────────────
+  const ratingCount = parseInt(game.downloads.replace(/[^0-9]/g, '')) || 1000;
+  const operatingSystem = [game.androidUrl && 'Android', game.iosUrl && 'iOS']
+    .filter(Boolean)
+    .join(', ');
+
+  // ─── SoftwareApplication schema (app-store rich result) ─────────
   const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: game.title,
+    ...(seo.aliases && seo.aliases.length ? { alternateName: seo.aliases } : {}),
     applicationCategory: 'GameApplication',
-    operatingSystem: [game.androidUrl && 'Android', game.iosUrl && 'iOS'].filter(Boolean).join(', '),
+    operatingSystem,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: game.rating,
       bestRating: 5,
-      ratingCount: parseInt(game.downloads.replace(/[^0-9]/g, '')) || 1000,
+      ratingCount,
     },
     offers: {
       '@type': 'Offer',
@@ -68,6 +110,42 @@ export default function GamePage({ params }) {
       priceCurrency: 'USD',
     },
     description: game.shortDescription,
+  };
+
+  // ─── VideoGame schema (gaming-specific rich result) ─────────────
+  // Schema.org VideoGame is the canonical type for games (vs generic
+  // SoftwareApplication). Google treats it as a distinct entity and
+  // it improves eligibility for game-specific SERP features like
+  // "games you may like" and Knowledge Graph game panels.
+  const videoGameSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: game.title,
+    ...(seo.aliases && seo.aliases.length ? { alternateName: seo.aliases } : {}),
+    genre: game.category,
+    gamePlatform: operatingSystem
+      ? operatingSystem.split(',').map((s) => s.trim())
+      : undefined,
+    applicationCategory: 'Game',
+    operatingSystem,
+    author: { '@type': 'Organization', name: game.developer },
+    publisher: { '@type': 'Organization', name: game.developer },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: game.rating,
+      bestRating: 5,
+      ratingCount,
+    },
+    offers: {
+      '@type': 'Offer',
+      price: game.price === 'Free' ? 0 : game.price.replace(/[^0-9.]/g, ''),
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+    image: game.icon,
+    description: game.shortDescription,
+    url: `https://fun5games.com/game/${game.slug}`,
+    inLanguage: 'en-IN',
   };
 
   // ─── BreadcrumbList schema (Home > Category > Game) ─────────────
@@ -251,6 +329,10 @@ export default function GamePage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
       />
       <script
         type="application/ld+json"
