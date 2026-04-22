@@ -45,7 +45,9 @@ export default function Header() {
 
         <nav className={`nav ${menuOpen ? 'nav-open' : ''}`} aria-label="Primary">
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/top-mobile-games-india-2026" onClick={() => setMenuOpen(false)}>Top 15</Link>
+          <Link href="/trending-mobile-games-india-april-2026" onClick={() => setMenuOpen(false)} className="nav-trending">
+            🔥 Trending
+          </Link>
           <Link href="/category/action" onClick={() => setMenuOpen(false)}>Categories</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>

@@ -2468,3 +2468,373 @@ button {
     flex-direction: column;
   }
 }
+
+/* ============================================
+   TRENDING LANDING PAGE — April 2026
+   Energy-driven design with viral badges, live pulse,
+   and install-optimized card grid.
+   ============================================ */
+
+.trending-page {
+  background: #faf9ff;
+}
+
+/* ── Hero: red-orange energy gradient (distinct from purple/maroon on other landings) ── */
+.landing-hero-trending {
+  background:
+    linear-gradient(135deg, #dc2626 0%, #ea580c 40%, #f59e0b 100%);
+  position: relative;
+}
+
+.landing-hero-trending::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(236, 72, 153, 0.15), transparent 40%);
+  pointer-events: none;
+}
+
+/* Live-pulse "updated today" chip */
+.trending-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  margin-bottom: 16px;
+  animation: trending-pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes trending-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  50%      { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);   }
+}
+
+/* Badge sampler row in hero */
+.trending-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.trending-badge-sample {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Tag colours (shared between hero sampler + card tags) ── */
+.trending-tag-viral {
+  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+}
+
+.trending-tag-trending {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+}
+
+.trending-tag-new {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(20, 184, 166, 0.3);
+}
+
+.trending-tag-hidden {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.trending-tag-cult {
+  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
+}
+
+/* ── Grid of cards ── */
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+@media (max-width: 768px) {
+  .trending-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.trending-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(236, 72, 153, 0.12);
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+/* Card cover image */
+.trending-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b0b14 0%, #1f1b2e 100%);
+}
+
+.trending-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.trending-card:hover .trending-card-img {
+  transform: scale(1.04);
+}
+
+.trending-card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+/* Card body */
+.trending-card-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.trending-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trending-card-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.trending-card-title a {
+  color: #111827;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.trending-card-title a:hover {
+  color: #dc2626;
+}
+
+.trending-card-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Hook line — brief install pitch, big font */
+.trending-card-hook {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0;
+  padding: 10px 12px;
+  background: #fff7ed;
+  border-left: 3px solid #f97316;
+  border-radius: 0 8px 8px 0;
+}
+
+.trending-card-blurb {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* 3-stat row */
+.trending-card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+.trending-card-stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trending-card-stat-num {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.trending-card-stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Social proof callout */
+.trending-card-proof {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #57534e;
+  background: #fef3c7;
+  border-radius: 6px;
+  padding: 8px 10px;
+  border: 1px solid #fde68a;
+}
+
+.trending-card-proof-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* CTA row — main Play Store button is the conversion focus */
+.trending-card-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.trending-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #374151;
+}
+
+.trending-card-btn:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+  color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.trending-card-btn-primary {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  color: #fff !important;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+  flex: 1;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.trending-card-btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.35);
+  color: #fff;
+}
+
+.trending-card-btn-ghost {
+  border-color: transparent;
+  background: transparent;
+  color: #6b7280;
+}
+
+.trending-card-btn-ghost:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+/* Responsive tighten */
+@media (max-width: 600px) {
+  .trending-card-body {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .trending-card-title {
+    font-size: 17px;
+  }
+
+  .trending-card-stats {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+
+  .trending-card-stat-num {
+    font-size: 13px;
+  }
+
+  .trending-card-btn-primary {
+    min-width: 100%;
+  }
+}
+
+/* Highlighted "Trending" nav link */
+.nav a.nav-trending {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.nav a.nav-trending:hover {
+  filter: brightness(1.08);
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}

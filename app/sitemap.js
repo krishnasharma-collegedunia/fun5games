@@ -13,6 +13,12 @@ export default function sitemap() {
     // than boilerplate static pages because Taboola traffic and
     // organic search both target these URLs.
     {
+      url: `${SITE_URL}/trending-mobile-games-india-april-2026`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
       url: `${SITE_URL}/top-mobile-games-india-2026`,
       lastModified: now,
       changeFrequency: 'weekly',
