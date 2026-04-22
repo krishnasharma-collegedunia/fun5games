@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="g" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7e22ce"/>
+      <stop offset="55%" stop-color="#c026d3"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".25"/>
+      <stop offset="55%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Squircle body -->
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#g)"/>
+  <!-- Glossy highlight -->
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#s)"/>
+  <!-- F5 wordmark — big, bold, readable at 16px -->
+  <text x="24" y="33" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    font-size="24" font-weight="900" fill="#ffffff" letter-spacing="-1.2">F5</text>
+</svg>

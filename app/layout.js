@@ -118,6 +118,28 @@ export const metadata = {
   // Google Search Console ownership is verified via the HTML file at
   // /public/googlece58a7c96de6a893.html — served at
   // https://fun5games.com/googlece58a7c96de6a893.html
+
+  // ─── Icons / PWA ────────────────────────────────────────
+  // Next.js automatically picks up app/icon.svg and app/apple-icon.png
+  // via the file-based icon convention. We additionally declare the
+  // classic /favicon.ico + /favicon-32.png here so legacy browsers
+  // and aggregators (RSS readers, link unfurlers) get a PNG fallback.
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/manifest.webmanifest',
+};
+
+// Theme color drives the Android Chrome address bar + iOS Safari
+// status bar tint when the site is opened as a PWA.
+export const viewport = {
+  themeColor: '#7e22ce',
 };
 
 export default function RootLayout({ children }) {
