@@ -568,14 +568,15 @@ button {
   margin-left: 2px;
 }
 
-/* ─── Ad Banner (bajgames.xyz style) ─────────────────────────
-   Labeled multi-size responsive containers mirroring baji's
-   `.ads > .banner-ad`. Three size tiers: bottom (970x250
-   flagship), inline (728x90 → 336x280), sidebar (300x250).
-   min-height values prevent CLS while ads load.
+/* ─── Ad Banner Container — professional, size-matched ───────
+   Sized to exactly match the active Adcash creative (300×250)
+   so the slot never shows empty padding around a loaded ad.
+   When no ad loads (AdBanner returns null) the slot is not
+   rendered at all — no dashed placeholder borders, no grey
+   bg that screams "broken site".
    ------------------------------------------------------------ */
 .ads {
-  margin: 24px auto;
+  margin: 20px auto;
   text-align: center;
   max-width: 100%;
 }
@@ -583,44 +584,55 @@ button {
 .ads-tips {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #a0a0a0;
+  letter-spacing: 1.5px;
+  color: #a8a5b5;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  opacity: 0.7;
 }
 
 .banner-ad {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5;
-  border: 1px dashed #d0d0d0;
-  border-radius: var(--radius-sm);
   overflow: hidden;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  /* No border, no background — invisible until ad creative fills it.
+     Our Adcash / AdSense components reserve the right size so there's
+     no layout shift when the ad paints. */
+}
+
+/* All three size tiers match the Adcash 300×250 creative we actually
+   serve. Once we upgrade to AdSense 970×250 we will re-tune these.
+   The .banner-ad child div dictates the actual visible ad — these
+   classes just set maximum room so responsive grids don't overflow. */
+.ad-baji-bottom,
+.ad-baji-inline,
+.ad-baji-sidebar {
+  width: 300px;
+  max-width: 100%;
+  height: 250px;
+  min-height: 250px;
   margin: 0 auto;
 }
 
-/* Flagship bottom slot — fits a 970x250 on desktop, 300x250 on mobile. */
-.ad-baji-bottom {
-  max-width: 970px;
+/* The Adcash target div sits inside .banner-ad and gets filled by
+   aclib.runBanner(). Keep it invisible until that happens — no
+   dashed border, no "Advertisement" filler look. */
+.adcash-banner-target {
   width: 100%;
-  min-height: 310px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adcash-banner-target:empty {
+  display: none;
 }
 
-/* Mid-content inline slot — fits 728x90 on desktop, 336x280 on mobile. */
-.ad-baji-inline {
-  max-width: 728px;
-  width: 100%;
-  min-height: 250px;
-}
-
-/* Sidebar rectangle — locked to standard MPU size. */
-.ad-baji-sidebar {
-  max-width: 300px;
-  width: 100%;
-  min-height: 250px;
-  margin: 0 auto 16px;
-}
+/* When the creative has loaded it becomes visible naturally — no
+   extra CSS needed; the iframe inside is 300×250 by design. */
 
 /* BajGames exact responsive breakpoints */
 @media (min-width: 544px) {
@@ -1577,14 +1589,8 @@ button {
   .download-section {
     padding: 16px;
   }
-  /* Tighter ad heights on small screens — baji uses 300x250/320x100
-     which comfortably fits within 260/210px. */
-  .ad-baji-bottom {
-    min-height: 260px;
-  }
-  .ad-baji-inline {
-    min-height: 210px;
-  }
+  /* Ad containers are already locked to 300×250 in the main
+     declaration — no mobile override needed. */
 }
 
 @media (max-width: 480px) {
