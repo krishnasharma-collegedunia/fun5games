@@ -3,6 +3,19 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+/**
+ * Screenshot gallery — 1 featured image + clickable thumbnails row.
+ *
+ * Source screenshots come from Apple App Store CDN at 1176×2088
+ * (portrait) or 1218×684 (landscape) — upgraded in April 2026 from
+ * the original 392×696 / 406×228 thumbs which looked pixelated.
+ *
+ * We render the main image at 1280×720 intrinsic so Next.js
+ * optimises it for high-DPI displays, then let CSS constrain the
+ * display size. Screenshots are unoptimized (Apple's CDN already
+ * serves optimised WebP equivalents, and double-optimising hits
+ * their rate limits).
+ */
 export default function ScreenshotGallery({ screenshots, title }) {
   const [active, setActive] = useState(0);
 
@@ -11,28 +24,41 @@ export default function ScreenshotGallery({ screenshots, title }) {
   return (
     <div className="screenshot-gallery">
       <h2>Screenshots</h2>
-      <Image
-        className="screenshot-main"
-        src={screenshots[active]}
-        alt={`${title} screenshot ${active + 1}`}
-        width={800}
-        height={450}
-        sizes="(max-width: 800px) 100vw, 800px"
-        priority
-      />
+
+      <div className="screenshot-main-wrap">
+        <Image
+          className="screenshot-main"
+          key={active}
+          src={screenshots[active]}
+          alt={`${title} gameplay screenshot ${active + 1}`}
+          width={1280}
+          height={720}
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 80vw, 1280px"
+          priority
+          quality={92}
+        />
+      </div>
+
       <div className="screenshot-thumbs">
         {screenshots.map((src, i) => (
-          <Image
+          <button
             key={i}
-            className={`screenshot-thumb ${i === active ? 'active' : ''}`}
-            src={src}
-            alt={`${title} thumb ${i + 1}`}
+            type="button"
+            className={`screenshot-thumb-btn ${i === active ? 'active' : ''}`}
             onClick={() => setActive(i)}
-            loading="lazy"
-            width={120}
-            height={68}
-            sizes="120px"
-          />
+            aria-label={`View screenshot ${i + 1} of ${screenshots.length}`}
+          >
+            <Image
+              className="screenshot-thumb"
+              src={src}
+              alt={`${title} thumbnail ${i + 1}`}
+              loading="lazy"
+              width={280}
+              height={160}
+              sizes="(max-width: 600px) 110px, 140px"
+              quality={80}
+            />
+          </button>
         ))}
       </div>
     </div>
