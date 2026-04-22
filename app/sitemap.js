@@ -8,6 +8,23 @@ export default function sitemap() {
   // Static pages
   const staticPages = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
+
+    // Landing pages — high-intent editorial content, ranked higher
+    // than boilerplate static pages because Taboola traffic and
+    // organic search both target these URLs.
+    {
+      url: `${SITE_URL}/top-mobile-games-india-2026`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/games-banned-india`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
