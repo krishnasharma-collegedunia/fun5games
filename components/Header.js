@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Logo from './Logo';
+import { trackSearchSubmit } from '@/lib/analytics';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,8 +13,10 @@ export default function Header() {
 
   function handleSearch(e) {
     e.preventDefault();
-    if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+    const trimmed = query.trim();
+    if (trimmed) {
+      trackSearchSubmit(trimmed);
+      router.push(`/search?q=${encodeURIComponent(trimmed)}`);
       setQuery('');
       setMenuOpen(false);
     }

@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { trackScreenshotView } from '@/lib/analytics';
 
 /**
  * Screenshot gallery — 1 featured image + clickable thumbnails row.
@@ -18,8 +20,17 @@ import Image from 'next/image';
  */
 export default function ScreenshotGallery({ screenshots, title }) {
   const [active, setActive] = useState(0);
+  const pathname = usePathname();
 
   if (!screenshots || screenshots.length === 0) return null;
+
+  const gameSlug = (pathname || '').replace(/^\/game\//, '').split('/')[0] || 'unknown';
+
+  const onThumbClick = (index) => {
+    if (index === active) return;
+    setActive(index);
+    trackScreenshotView(gameSlug, index);
+  };
 
   return (
     <div className="screenshot-gallery">
@@ -45,7 +56,7 @@ export default function ScreenshotGallery({ screenshots, title }) {
             key={i}
             type="button"
             className={`screenshot-thumb-btn ${i === active ? 'active' : ''}`}
-            onClick={() => setActive(i)}
+            onClick={() => onThumbClick(i)}
             aria-label={`View screenshot ${i + 1} of ${screenshots.length}`}
           >
             <Image

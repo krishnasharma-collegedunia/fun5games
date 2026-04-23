@@ -3,12 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { trackGameCardClick } from '@/lib/analytics';
 
-export default function GameCard({ game, dense, featured }) {
+export default function GameCard({ game, dense, featured, source = 'unknown' }) {
   const [imgError, setImgError] = useState(false);
 
   const fallback = `https://placehold.co/512x512/6d28d9/white?text=${encodeURIComponent(game.title.slice(0, 12))}`;
   const src = imgError ? fallback : game.icon;
+
+  const onCardClick = () => {
+    trackGameCardClick(game.slug, game.title, source);
+  };
 
   if (dense) {
     return (
@@ -16,6 +21,7 @@ export default function GameCard({ game, dense, featured }) {
         href={`/game/${game.slug}`}
         className={`game-item${featured ? ' item-featured' : ''}`}
         title={game.title}
+        onClick={onCardClick}
       >
         <div className="game-icon-wrap">
           <Image
@@ -36,7 +42,7 @@ export default function GameCard({ game, dense, featured }) {
 
   const badgeClass = `category-badge badge-${game.category.toLowerCase()}`;
   return (
-    <Link href={`/game/${game.slug}`} className="game-card">
+    <Link href={`/game/${game.slug}`} className="game-card" onClick={onCardClick}>
       <Image
         className="game-card-img"
         src={src}

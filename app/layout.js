@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MontagMultitag from '@/components/MontagMultitag';
 import AdSenseScript from '@/components/AdSenseScript';
+import ScrollTracker from '@/components/ScrollTracker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
@@ -157,6 +158,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <ScrollTracker />
         <MontagMultitag />
         <AdSenseScript />
       </body>

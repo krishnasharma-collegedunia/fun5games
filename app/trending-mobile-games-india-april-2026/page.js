@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { getGameBySlug } from '@/data/games';
 import { trendingSlugs, trendingEditorial } from '@/data/trendingApril2026';
 import Stars from '@/components/Stars';
+import TrackedExternalLink from '@/components/TrackedExternalLink';
 
 /* ───────────────── Metadata ───────────────── */
 export const metadata = {
@@ -265,24 +266,28 @@ export default function TrendingApril2026Page() {
 
                   <div className="trending-card-cta">
                     {e.game.androidUrl && (
-                      <a
+                      <TrackedExternalLink
                         href={`${e.game.androidUrl}&utm_source=fun5games&utm_medium=trending-landing&utm_campaign=april-2026&utm_content=${e.game.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        eventType="trending"
+                        gameSlug={e.game.slug}
+                        ctaType="play_store"
+                        position={e.rank}
                         className="trending-card-btn trending-card-btn-primary"
                       >
                         <span>📲</span> Install on Play Store
-                      </a>
+                      </TrackedExternalLink>
                     )}
                     {e.game.iosUrl && (
-                      <a
+                      <TrackedExternalLink
                         href={`${e.game.iosUrl}?utm_source=fun5games&utm_medium=trending-landing&utm_campaign=april-2026&utm_content=${e.game.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        eventType="trending"
+                        gameSlug={e.game.slug}
+                        ctaType="app_store"
+                        position={e.rank}
                         className="trending-card-btn"
                       >
                         <span>🍎</span> App Store
-                      </a>
+                      </TrackedExternalLink>
                     )}
                     <Link href={`/game/${e.game.slug}`} className="trending-card-btn trending-card-btn-ghost">
                       Read guide →

@@ -1,3 +1,5 @@
+import TrackedExternalLink from './TrackedExternalLink';
+
 export default function CtaSection({ game }) {
   const hasAndroid = !!game.androidUrl;
   const hasIos = !!game.iosUrl;
@@ -12,12 +14,14 @@ export default function CtaSection({ game }) {
       </div>
       <div className={`download-buttons ${hasAndroid && hasIos ? 'two-cols' : 'one-col'}`}>
         {hasAndroid && (
-          <a
+          <TrackedExternalLink
             href={game.androidUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eventType="play_store"
+            gameSlug={game.slug}
+            gameName={game.title}
+            source="game_detail"
             className="download-btn download-btn-google"
-            aria-label={`Download ${game.title} from Google Play`}
+            ariaLabel={`Download ${game.title} from Google Play`}
           >
             <div className="download-btn-icon">
               <svg viewBox="0 0 48 48" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
@@ -49,15 +53,17 @@ export default function CtaSection({ game }) {
               <div className="download-btn-title">Google Play</div>
               <div className="download-btn-subtitle">Download from Google Play</div>
             </div>
-          </a>
+          </TrackedExternalLink>
         )}
         {hasIos && (
-          <a
+          <TrackedExternalLink
             href={game.iosUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            eventType="app_store"
+            gameSlug={game.slug}
+            gameName={game.title}
+            source="game_detail"
             className="download-btn download-btn-apple"
-            aria-label={`Download ${game.title} from App Store`}
+            ariaLabel={`Download ${game.title} from App Store`}
           >
             <div className="download-btn-icon">
               <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="#111">
@@ -68,7 +74,7 @@ export default function CtaSection({ game }) {
               <div className="download-btn-title">iOS</div>
               <div className="download-btn-subtitle">Download from App Store</div>
             </div>
-          </a>
+          </TrackedExternalLink>
         )}
       </div>
     </div>
