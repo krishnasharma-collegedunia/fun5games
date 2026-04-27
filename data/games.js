@@ -375,7 +375,13 @@ export const games = rawGames.map((g, index) => {
     trending: g.trend || false,
     icon: g.img,
     thumbnail: g.img,
-    screenshots: screenshotMap[g.iid] || [g.img, g.img, g.img, g.img],
+    // Real screenshots only — if Apple's HTML scraper or the
+    // audit removed an entry from screenshotMap, fall back to
+    // an empty array so ScreenshotGallery cleanly hides itself
+    // (it returns null on empty input). The previous fallback
+    // duplicated the game icon 4× as fake gameplay screenshots
+    // which looked obviously wrong on cold-traffic visits.
+    screenshots: screenshotMap[g.iid] || [],
     androidUrl: g.apkg ? `https://play.google.com/store/apps/details?id=${g.apkg}` : null,
     iosUrl: g.iid ? `https://apps.apple.com/app/id${g.iid}` : null,
   };
