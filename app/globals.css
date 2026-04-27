@@ -125,13 +125,16 @@ button {
 }
 
 /* ─── Homepage Full-Bleed (BajGames clone) ─── */
-/* ── BajGames-exact dense wall: tiles flush edge-to-edge ──
-   No outer padding, zero gap between tiles, no per-tile border
-   or border-radius. The whole homepage becomes one continuous
-   game wall like bajgames.xyz. */
+/* ── BajGames-style dense wall with hairline gaps ──
+   3px gap shows the white body background between tiles so
+   adjacent dark icons (e.g. EA FC Mobile next to Subway Surfers)
+   stay visually distinct instead of blurring into one image.
+   Tiles still touch tightly enough to read as a single wall —
+   not a card grid with breathing room. Slight 4px corner radius
+   matches baji's polished look without becoming "bubbly". */
 .homepage-full {
   min-height: 100vh;
-  background: transparent;
+  background: #ffffff;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -142,40 +145,42 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-flow: dense;
-  gap: 0;
+  gap: 3px;
   width: 100%;
+  background: #ffffff;
 }
 
-/* Tiles flush — no border, no radius, no shadow.
-   Hover keeps the brand a tiny lift on opacity only so the
-   wall reads as one continuous surface, not a card grid. */
+/* Each tile: subtle rounded corners + clipping. No border ring
+   (the white gap from `gap` is the visual separator) and no
+   shadow on idle. Hover lifts opacity slightly for tactile
+   feedback, no scale/transform so neighbouring tiles don't shift. */
 .game-item {
   position: relative;
-  border-radius: 0;
+  border-radius: 4px;
   overflow: hidden;
   aspect-ratio: 1;
   border: 0;
   box-shadow: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity 0.15s ease;
   display: block;
   background: #f0eef5;
 }
 
 .game-item:hover {
-  opacity: 0.92;
+  opacity: 0.9;
   z-index: 2;
 }
 
 .game-item:active {
-  opacity: 0.85;
+  opacity: 0.82;
 }
 
-/* Featured 2×2 hero — no extra radius / inset border, must
-   match the surrounding tiles edge-to-edge. */
+/* Featured 2×2 hero gets slightly larger radius to feel premium
+   without breaking alignment with the surrounding wall. */
 .item-featured {
   grid-column: span 2;
   grid-row: span 2;
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 .game-icon-wrap {
@@ -1497,7 +1502,7 @@ button {
 @media (max-width: 768px) {
   .game-grid-wall {
     grid-template-columns: repeat(5, 1fr);
-    gap: 0;
+    gap: 2px;
   }
 
   .homepage-full {
@@ -1591,7 +1596,7 @@ button {
 @media (max-width: 480px) {
   .game-grid-wall {
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    gap: 2px;
   }
 
   .homepage-full {
@@ -1599,7 +1604,7 @@ button {
   }
 
   .game-item {
-    border-radius: 0;
+    border-radius: 3px;
   }
 
   .game-icon-img {
