@@ -1,6 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MontagMultitag from '@/components/MontagMultitag';
+// Ad networks intentionally NOT imported here — site is in
+// "clean placeholder" state pending Vertoz GAM integration.
+// When Vertoz provides JS tag we'll mount it here. AdSense
+// infrastructure stays env-gated for the day Vertoz issues
+// publisher ID via MCM.
 import AdSenseScript from '@/components/AdSenseScript';
 import ScrollTracker from '@/components/ScrollTracker';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -159,7 +163,10 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <ScrollTracker />
-        <MontagMultitag />
+        {/* Ad slot reserved for Vertoz GAM tag — drop in here when
+            their JS snippet arrives. AdSenseScript stays env-gated
+            so it activates the moment Vertoz issues an MCM
+            publisher ID. */}
         <AdSenseScript />
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />

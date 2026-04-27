@@ -1,46 +1,35 @@
 # ads.txt for fun5games.com
 # Owned and operated by: Mediafinity Adtech Pvt Ltd
-# Last updated: 2026-04-16
+# Last updated: 2026-04-22
 #
 # This file authorizes specific ad networks to sell inventory on this site.
 # Format: <domain>, <publisher-id>, <DIRECT|RESELLER>, <TAG-ID (optional)>
 # Spec:   https://iabtechlab.com/ads-txt/
 #
 # ───────────────────────────────────────────────────────────────────
-# ACTIVE PARTNERS
+# STATUS
+# ───────────────────────────────────────────────────────────────────
+# Site is in pre-monetisation phase. Vertoz partnership is being
+# onboarded; once their MCM bundle (~10-15 lines) is issued we will
+# replace the placeholder block below with their authorised lines.
+#
+# Until Vertoz is live the site serves ZERO third-party ad inventory.
+# Any ads.txt crawler hitting this file should treat the domain as
+# having no authorised sellers at the moment.
+#
+# ───────────────────────────────────────────────────────────────────
+# PENDING — Vertoz Onboarding (replace these comment blocks with
+# the actual authorised seller lines once Ayushmann issues the MSA)
 # ───────────────────────────────────────────────────────────────────
 
-# --- Adcash ---
-# Account ID 1172402 (quizzy2026@gmail.com).
-# Website ID 1598146 (fun5games.com). Zone qdabofupyz (Autotag).
-# Speculative line using Adcash's publicly documented format.
-# Verify against Adcash Dashboard → Websites → edit fun5games.com →
-# ads.txt section, or ask Adcash live chat. Update if different.
-adcash.com, 1172402, DIRECT, d7c018a074d6bb65
-
-# --- Google AdSense ---
-# Uncomment + replace pub-XXXXXXXXXXXXXXXX with your real AdSense
-# publisher ID (AdSense Dashboard → Account → Account information).
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-
-# ───────────────────────────────────────────────────────────────────
-# BACKUP / BENCH (not integrated on-site yet)
-# ───────────────────────────────────────────────────────────────────
-
-# --- Vertoz ---
+# --- Vertoz (publisher ID + GAM bundle pending) ---
 # vertoz.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- PropellerAds ---
-# propellerads.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- AdMaven ---
-# admaven.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- Infolinks ---
-# infolinks.com, PUBLISHER_ID_HERE, DIRECT
-
-# --- Media.net ---
-# media.net, PUBLISHER_ID_HERE, DIRECT
+# google.com, pub-XXXXXXXXXXXXXXXX, RESELLER, f08c47fec0942fa0
+# rubiconproject.com, ID_HERE, RESELLER, 0bfd66d529a55807
+# pubmatic.com, ID_HERE, RESELLER, 5d62403b186f2ace
+# openx.com, ID_HERE, RESELLER, 6a698e2ec38604c6
+# appnexus.com, ID_HERE, RESELLER, f5ab79cb980f11d1
+# ... (full bundle to be supplied by Vertoz)
 
 # ───────────────────────────────────────────────────────────────────
 # CONTACT: quizzy2026@gmail.com
