@@ -1,0 +1,765 @@
+{
+  "ok": [
+    {
+      "title": "Free Fire",
+      "apkg": "com.dts.freefireth"
+    },
+    {
+      "title": "Shadow Fight 3",
+      "apkg": "com.nekki.shadowfight3"
+    },
+    {
+      "title": "Pimple Pop",
+      "apkg": "com.ModeAlpha.Plucky"
+    },
+    {
+      "title": "Roblox",
+      "apkg": "com.roblox.client"
+    },
+    {
+      "title": "PUBG Mobile",
+      "apkg": "com.tencent.ig"
+    },
+    {
+      "title": "Clash of Clans",
+      "apkg": "com.supercell.clashofclans"
+    },
+    {
+      "title": "Candy Crush Saga",
+      "apkg": "com.king.candycrushsaga"
+    },
+    {
+      "title": "Poppy Playtime",
+      "apkg": "com.MOBGames.PoppyMobileChap1"
+    },
+    {
+      "title": "Minecraft",
+      "apkg": "com.mojang.minecraftpe"
+    },
+    {
+      "title": "Subway Surfers",
+      "apkg": "com.kiloo.subwaysurf"
+    },
+    {
+      "title": "Hill Climb Racing",
+      "apkg": "com.fingersoft.hillclimb"
+    },
+    {
+      "title": "Among Us",
+      "apkg": "com.innersloth.spacemafia"
+    },
+    {
+      "title": "Temple Run 2",
+      "apkg": "com.imangi.templerun2"
+    },
+    {
+      "title": "Plants vs Zombies 2",
+      "apkg": "com.ea.game.pvz2_na"
+    },
+    {
+      "title": "EA Sports FC Mobile",
+      "apkg": "com.ea.gp.fifamobile"
+    },
+    {
+      "title": "Score! Hero",
+      "apkg": "com.firsttouchgames.story"
+    },
+    {
+      "title": "Badminton Clash",
+      "apkg": "games.onebutton.badminton"
+    },
+    {
+      "title": "Cut the Rope",
+      "apkg": "com.zeptolab.ctr.ads"
+    },
+    {
+      "title": "Stumble Guys",
+      "apkg": "com.kitkagames.fallbuddies"
+    },
+    {
+      "title": "GTA San Andreas",
+      "apkg": "com.rockstargames.gtasa"
+    },
+    {
+      "title": "Five Nights at Freddy\\",
+      "apkg": "com.scottgames.fivenightsatfreddys"
+    },
+    {
+      "title": "Farming Simulator 14",
+      "apkg": "com.giantssoftware.fs14"
+    },
+    {
+      "title": "Piano Tiles 2",
+      "apkg": "com.kooapps.pianotiles2gp"
+    },
+    {
+      "title": "Playduck",
+      "apkg": "com.pikpok.wtd.play"
+    },
+    {
+      "title": "Water Sort Puzzle",
+      "apkg": "com.gma.water.sort.puzzle"
+    },
+    {
+      "title": "My Talking Tom",
+      "apkg": "com.outfit7.mytalkingtomfree"
+    },
+    {
+      "title": "Crossy Road",
+      "apkg": "com.yodo1.crossyroad"
+    },
+    {
+      "title": "Angry Birds 2",
+      "apkg": "com.rovio.baba"
+    },
+    {
+      "title": "Clash Royale",
+      "apkg": "com.supercell.clashroyale"
+    },
+    {
+      "title": "Asphalt 9",
+      "apkg": "com.gameloft.android.ANMP.GloftA9HM"
+    },
+    {
+      "title": "Brawl Stars",
+      "apkg": "com.supercell.brawlstars"
+    },
+    {
+      "title": "Bike Race",
+      "apkg": "com.topfreegames.bikeracefreeworld"
+    },
+    {
+      "title": "Solitaire",
+      "apkg": "com.mobilityware.solitaire"
+    },
+    {
+      "title": "Toca Life World",
+      "apkg": "com.tocaboca.tocalifeworld"
+    },
+    {
+      "title": "Sonic Dash",
+      "apkg": "com.sega.sonicdash"
+    },
+    {
+      "title": "Gardenscapes",
+      "apkg": "com.playrix.gardenscapes"
+    },
+    {
+      "title": "Fruit Ninja",
+      "apkg": "com.halfbrick.fruitninjafree"
+    },
+    {
+      "title": "Deer Hunter",
+      "apkg": "com.fullfat.deerhunter"
+    },
+    {
+      "title": "Hay Day",
+      "apkg": "com.supercell.hayday"
+    },
+    {
+      "title": "Score! Match",
+      "apkg": "com.firsttouchgames.smp"
+    },
+    {
+      "title": "Talking Tom Cat",
+      "apkg": "com.outfit7.talkingtom"
+    },
+    {
+      "title": "Genshin Impact",
+      "apkg": "com.miHoYo.GenshinImpact"
+    },
+    {
+      "title": "Coin Master",
+      "apkg": "com.moonactive.coinmaster"
+    },
+    {
+      "title": "LEGO Star Wars",
+      "apkg": "com.wb.lego.tcs"
+    },
+    {
+      "title": "Motocross Elite",
+      "apkg": "com.turborilla.bike.racing.madskillsmotocross3"
+    },
+    {
+      "title": "Getting Over It",
+      "apkg": "com.noodlecake.gettingoverit"
+    },
+    {
+      "title": "Sudoku",
+      "apkg": "com.easybrain.sudoku.android"
+    },
+    {
+      "title": "Candy Crush Soda",
+      "apkg": "com.king.candycrushsodasaga"
+    },
+    {
+      "title": "Homescapes",
+      "apkg": "com.playrix.homescapes"
+    },
+    {
+      "title": "Geometry Dash",
+      "apkg": "com.robtopx.geometryjump"
+    },
+    {
+      "title": "Hungry Shark",
+      "apkg": "com.fgol.HungrySharkEvolution"
+    },
+    {
+      "title": "Jetpack Joyride",
+      "apkg": "com.halfbrick.jetpackjoyride"
+    },
+    {
+      "title": "Chess.com",
+      "apkg": "com.chess"
+    },
+    {
+      "title": "Mario Kart Tour",
+      "apkg": "com.nintendo.zaka"
+    },
+    {
+      "title": "Need for Speed",
+      "apkg": "com.ea.game.nfs14_row"
+    },
+    {
+      "title": "Boom Beach",
+      "apkg": "com.supercell.boombeach"
+    },
+    {
+      "title": "Cooking Fever",
+      "apkg": "com.nordcurrent.canteenhd"
+    },
+    {
+      "title": "Brain Out",
+      "apkg": "com.mind.quiz.brain.out"
+    },
+    {
+      "title": "Wordle",
+      "apkg": "com.nytimes.crossword"
+    },
+    {
+      "title": "Monument Valley",
+      "apkg": "com.ustwo.monumentvalley"
+    },
+    {
+      "title": "Real Cricket 24",
+      "apkg": "com.nautilus.realcricket"
+    },
+    {
+      "title": "eFootball",
+      "apkg": "jp.konami.pesam"
+    },
+    {
+      "title": "8 Ball Pool",
+      "apkg": "com.miniclip.eightballpool"
+    },
+    {
+      "title": "Call of Duty Mobile",
+      "apkg": "com.activision.callofduty.shooter"
+    },
+    {
+      "title": "Hill Climb Racing 2",
+      "apkg": "com.fingersoft.hcr2"
+    },
+    {
+      "title": "Asphalt 8",
+      "apkg": "com.gameloft.android.ANMP.GloftA8HM"
+    },
+    {
+      "title": "Archero",
+      "apkg": "com.habby.archero"
+    },
+    {
+      "title": "Stardew Valley",
+      "apkg": "com.chucklefish.stardewvalley"
+    },
+    {
+      "title": "Snake.io",
+      "apkg": "com.amelosinteractive.snake"
+    },
+    {
+      "title": "Lords Mobile",
+      "apkg": "com.igg.android.lordsmobile"
+    },
+    {
+      "title": "PAC-MAN",
+      "apkg": "eu.bandainamcoent.pacman256"
+    },
+    {
+      "title": "Adventure Capitalist",
+      "apkg": "com.kongregate.mobile.adventurecapitalist.google"
+    },
+    {
+      "title": "Limbo",
+      "apkg": "com.playdead.limbo.full"
+    },
+    {
+      "title": "The Room",
+      "apkg": "com.FireproofStudios.TheRoom"
+    },
+    {
+      "title": "Terraria",
+      "apkg": "com.and.games505.TerrariaPaid"
+    },
+    {
+      "title": "Traffic Rider",
+      "apkg": "com.skgames.trafficrider"
+    },
+    {
+      "title": "Candy Crush Friends",
+      "apkg": "com.king.candycrush4"
+    },
+    {
+      "title": "Royal Match",
+      "apkg": "com.dreamgames.royalmatch"
+    },
+    {
+      "title": "Toy Blast",
+      "apkg": "net.peakgames.amy"
+    },
+    {
+      "title": "Toon Blast",
+      "apkg": "net.peakgames.toonblast"
+    },
+    {
+      "title": "Merge Dragons",
+      "apkg": "com.gramgames.mergedragons"
+    },
+    {
+      "title": "Fishdom",
+      "apkg": "com.playrix.fishdomdd.gplay"
+    },
+    {
+      "title": "Lily Garden",
+      "apkg": "dk.tactile.lilysgarden"
+    },
+    {
+      "title": "Merge Mansion",
+      "apkg": "com.everywear.game5"
+    },
+    {
+      "title": "Candy Blast",
+      "apkg": "com.cookapps.beagles.ng003"
+    },
+    {
+      "title": "Bubble Shooter",
+      "apkg": "bubbleshooter.orig"
+    },
+    {
+      "title": "Dragon Ball Legends",
+      "apkg": "com.bandainamcoent.dblegends_ww"
+    },
+    {
+      "title": "MARVEL Contest",
+      "apkg": "com.kabam.marvelbattle"
+    },
+    {
+      "title": "Sniper 3D",
+      "apkg": "com.fungames.sniper3d"
+    },
+    {
+      "title": "Granny Horror",
+      "apkg": "com.dvloper.granny"
+    },
+    {
+      "title": "Ice Scream",
+      "apkg": "com.keplerians.icescream"
+    },
+    {
+      "title": "Hello Neighbor",
+      "apkg": "com.tinybuildgames.helloneighbor"
+    },
+    {
+      "title": "Scary Teacher",
+      "apkg": "com.zakg.scaryteacher.hellgame"
+    },
+    {
+      "title": "Dark Riddle",
+      "apkg": "com.neighbors.darkriddle"
+    },
+    {
+      "title": "Helix Jump",
+      "apkg": "com.h8games.helixjump"
+    },
+    {
+      "title": "Color Switch",
+      "apkg": "com.colorswitch.switch2"
+    },
+    {
+      "title": "Hole.io",
+      "apkg": "io.voodoo.holeio"
+    },
+    {
+      "title": "Knife Hit",
+      "apkg": "com.ketchapp.knifehit"
+    },
+    {
+      "title": "Color Bump 3D",
+      "apkg": "com.colorup.game"
+    },
+    {
+      "title": "Bottle Flip",
+      "apkg": "pampam.ibf2"
+    },
+    {
+      "title": "Angry Gran Run",
+      "apkg": "com.aceviral.angrygranrun"
+    },
+    {
+      "title": "Smash Hit",
+      "apkg": "com.mediocre.smashhit"
+    },
+    {
+      "title": "Duet Game",
+      "apkg": "com.kumobius.android.duet"
+    },
+    {
+      "title": "Ludo King",
+      "apkg": "com.ludo.king"
+    },
+    {
+      "title": "Clash Quest",
+      "apkg": "com.supercell.squad"
+    },
+    {
+      "title": "Rise of Kingdoms",
+      "apkg": "com.lilithgame.roc.gp"
+    },
+    {
+      "title": "Rope Hero",
+      "apkg": "com.mgc.RopeHero.ViceTown"
+    },
+    {
+      "title": "Idle Heroes",
+      "apkg": "com.droidhang.ad"
+    },
+    {
+      "title": "Raid Shadow Legends",
+      "apkg": "com.plarium.raidlegends"
+    },
+    {
+      "title": "AFK Arena",
+      "apkg": "com.lilithgame.hgame.gp"
+    },
+    {
+      "title": "Empires & Puzzles",
+      "apkg": "com.smallgiantgames.empires"
+    },
+    {
+      "title": "Plague Inc.",
+      "apkg": "com.miniclip.plagueinc"
+    },
+    {
+      "title": "Last Day on Earth",
+      "apkg": "zombie.survival.craft.z"
+    },
+    {
+      "title": "Garena AOV",
+      "apkg": "com.ngame.allstar.eu"
+    },
+    {
+      "title": "Mobile Legends",
+      "apkg": "com.mobile.legends.usa"
+    },
+    {
+      "title": "Flick Shoot 2",
+      "apkg": "net.mobilecraft.flickshoot2"
+    },
+    {
+      "title": "Alto\\",
+      "apkg": "com.noodlecake.altosodyssey"
+    },
+    {
+      "title": "Pokémon GO",
+      "apkg": "com.nianticlabs.pokemongo"
+    },
+    {
+      "title": "Bloons TD 6",
+      "apkg": "com.ninjakiwi.bloonstd6"
+    },
+    {
+      "title": "Bad Piggies",
+      "apkg": "com.rovio.BadPiggies"
+    },
+    {
+      "title": "Where\\",
+      "apkg": "com.disney.wheresmywater2_goo"
+    },
+    {
+      "title": "Flip Diving",
+      "apkg": "com.motionvolt.flipdiving"
+    },
+    {
+      "title": "Dino Bash",
+      "apkg": "com.pokokostudio.dinobash"
+    },
+    {
+      "title": "Papa\\",
+      "apkg": "air.com.flipline.papascupcakeriatogo"
+    },
+    {
+      "title": "Gacha Life",
+      "apkg": "air.com.lunime.gachalife"
+    },
+    {
+      "title": "Fortnite",
+      "apkg": "com.epicgames.fortnite"
+    },
+    {
+      "title": "Earn to Die",
+      "apkg": "com.notdoppler.earntodie2"
+    },
+    {
+      "title": "Human Fall Flat",
+      "apkg": "com.and.games505.humanfallflat"
+    },
+    {
+      "title": "BitLife",
+      "apkg": "com.candywriter.bitlife"
+    },
+    {
+      "title": "Pou",
+      "apkg": "me.pou.app"
+    },
+    {
+      "title": "Gacha Club",
+      "apkg": "air.com.lunime.gachaclub"
+    },
+    {
+      "title": "Moto X3M",
+      "apkg": "air.com.aceviral.motox3m"
+    },
+    {
+      "title": "Plants vs Zombies",
+      "apkg": "com.ea.game.pvzfree_row"
+    },
+    {
+      "title": "Red Ball 4",
+      "apkg": "com.FDGEntertainment.redball4.gp"
+    },
+    {
+      "title": "MONOPOLY GO",
+      "apkg": "com.scopely.monopolygo"
+    },
+    {
+      "title": "Honkai Star Rail",
+      "apkg": "com.HoYoverse.hkrpgoversea"
+    },
+    {
+      "title": "Minion Rush",
+      "apkg": "com.gameloft.android.ANMP.GloftDMHM"
+    },
+    {
+      "title": "Kick the Buddy",
+      "apkg": "com.playgendary.kickthebuddy"
+    },
+    {
+      "title": "Magic Tiles 3",
+      "apkg": "com.youmusic.magictiles"
+    },
+    {
+      "title": "Bowmasters",
+      "apkg": "com.playgendary.bowmasters"
+    },
+    {
+      "title": "Bomber Friends",
+      "apkg": "com.hyperkani.bomberfriends"
+    },
+    {
+      "title": "Cooking City",
+      "apkg": "com.cookingcity.chef.kitchen.craze.fever"
+    },
+    {
+      "title": "Disney Frozen Free Fall",
+      "apkg": "com.disney.frozensaga_goo"
+    },
+    {
+      "title": "Suika Game",
+      "apkg": "com.aladdinx.suikagame"
+    },
+    {
+      "title": "Flip Master",
+      "apkg": "com.motionvolt.flipbounce"
+    },
+    {
+      "title": "Idle Ants",
+      "apkg": "com.idleants.game"
+    },
+    {
+      "title": "Block Puzzle",
+      "apkg": "com.dxm.nopuzzle"
+    },
+    {
+      "title": "Doodle Jump",
+      "apkg": "com.lima.doodlejump"
+    },
+    {
+      "title": "My Talking Angela",
+      "apkg": "com.outfit7.mytalkingangela2"
+    },
+    {
+      "title": "Hungry Shark World",
+      "apkg": "com.ubisoft.hungrysharkworld"
+    },
+    {
+      "title": "SpongeBob Adventures",
+      "apkg": "com.tiltingpoint.sbadventures"
+    },
+    {
+      "title": "Toca Hair Salon",
+      "apkg": "com.tocaboca.tocahairsalon4"
+    },
+    {
+      "title": "Muse Dash",
+      "apkg": "com.prpr.musedash"
+    },
+    {
+      "title": "Identity V",
+      "apkg": "com.netease.idv.googleplay"
+    },
+    {
+      "title": "Last War Survival",
+      "apkg": "com.fun.lastwar"
+    },
+    {
+      "title": "Street Racing 3D",
+      "apkg": "com.combineinc.streetracing.driftthreeD"
+    },
+    {
+      "title": "Poly Bridge",
+      "apkg": "com.drycactus.polybridge3"
+    },
+    {
+      "title": "NARUTO Storm",
+      "apkg": "com.bandainamcoent.ultimateninjastorm"
+    },
+    {
+      "title": "Hotel Frenzy",
+      "apkg": "com.techvision.hotelfrenzy"
+    },
+    {
+      "title": "Last Z Survival",
+      "apkg": "com.readygo.barrel.gp"
+    },
+    {
+      "title": "Word Pizza",
+      "apkg": "com.openmygame.games.android.wordpizza"
+    },
+    {
+      "title": "PAW Patrol World",
+      "apkg": "com.budgestudios.googleplay.PawPatrolRescueWorld"
+    },
+    {
+      "title": "Troll Face Quest",
+      "apkg": "air.com.spilgames.TrollFaceQuestVideoGames2"
+    },
+    {
+      "title": "My Talking Hank",
+      "apkg": "com.outfit7.mytalkinghank"
+    },
+    {
+      "title": "Shadow Fight 2",
+      "apkg": "com.nekki.shadowfight"
+    },
+    {
+      "title": "Smurfs Village",
+      "apkg": "com.capcom.smurfsandroid"
+    },
+    {
+      "title": "Masha and the Bear",
+      "apkg": "com.devgame.masha.and.bear.my.friends"
+    },
+    {
+      "title": "Bloons TD 5",
+      "apkg": "com.ninjakiwi.bloonstd5"
+    },
+    {
+      "title": "Poppy Playtime Ch 2",
+      "apkg": "com.MOBGames.PoppyMobileChap2"
+    },
+    {
+      "title": "Poppy Playtime Ch 3",
+      "apkg": "com.MobEntertainment.PoppyPlaytimeChapter3"
+    },
+    {
+      "title": "Five Nights at Freddys 2",
+      "apkg": "com.scottgames.fnaf2"
+    },
+    {
+      "title": "Five Nights at Freddys 3",
+      "apkg": "com.scottgames.fnaf3"
+    },
+    {
+      "title": "Five Nights at Freddys 4",
+      "apkg": "com.scottgames.fnaf4"
+    },
+    {
+      "title": "Baldi Basics",
+      "apkg": "com.BasicallyGames.BaldisBasicsClassic"
+    },
+    {
+      "title": "Goosebumps Horror",
+      "apkg": "com.pixowl.goosebumps"
+    },
+    {
+      "title": "Angry Birds Reloaded",
+      "apkg": "com.rovio.baba"
+    },
+    {
+      "title": "Stack Ball",
+      "apkg": "com.azurgames.stackball"
+    },
+    {
+      "title": "Township",
+      "apkg": "com.playrix.township"
+    },
+    {
+      "title": "Candy Crush Jelly",
+      "apkg": "com.king.candycrushjellysaga"
+    },
+    {
+      "title": "Cooking Mama",
+      "apkg": "jp.co.ofcr.cm00"
+    },
+    {
+      "title": "Tap Titans 2",
+      "apkg": "com.gamehivecorp.taptitans2"
+    },
+    {
+      "title": "Alto Adventure",
+      "apkg": "com.noodlecake.altosadventure"
+    },
+    {
+      "title": "Dragon City",
+      "apkg": "es.socialpoint.DragonCity"
+    },
+    {
+      "title": "Farm Heroes Saga",
+      "apkg": "com.king.farmheroessaga"
+    },
+    {
+      "title": "Worms Zone",
+      "apkg": "com.wildspike.wormszone"
+    },
+    {
+      "title": "Slither.io",
+      "apkg": "air.com.hypah.io.slither"
+    },
+    {
+      "title": "Paper.io 2",
+      "apkg": "io.voodoo.paper2"
+    },
+    {
+      "title": "Talking Ben",
+      "apkg": "com.outfit7.talkingben"
+    },
+    {
+      "title": "World of Tanks",
+      "apkg": "net.wargaming.wot.blitz"
+    },
+    {
+      "title": "Fallout Shelter",
+      "apkg": "com.bethsoft.falloutshelter"
+    }
+  ],
+  "failed": []
+}

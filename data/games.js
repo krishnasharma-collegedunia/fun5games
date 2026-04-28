@@ -11,6 +11,7 @@
  */
 
 import screenshotMap from './screenshots';
+import iconMap from './icons';
 
 const rawGames = [
   // === FEATURED HERO — Free Fire ===
@@ -373,8 +374,15 @@ export const games = rawGames.map((g, index) => {
     tags: g.tags,
     featured: g.feat || false,
     trending: g.trend || false,
-    icon: g.img,
-    thumbnail: g.img,
+    // Prefer Google Play Store square icons (guaranteed 512×512
+    // app icon, not marketing banner). Falls back to the original
+    // Apple mzstatic CDN URL for any apkg the Play scrape didn't
+    // cover. This was added because Apple's "AppIcon" URLs for
+    // Free Fire / PUBG Mobile / others were marketing banners
+    // (portrait/landscape art with black letterbox bars), not
+    // square icons — they cropped badly in the homepage grid.
+    icon: iconMap[g.apkg] || g.img,
+    thumbnail: iconMap[g.apkg] || g.img,
     // Real screenshots only — if Apple's HTML scraper or the
     // audit removed an entry from screenshotMap, fall back to
     // an empty array so ScreenshotGallery cleanly hides itself
