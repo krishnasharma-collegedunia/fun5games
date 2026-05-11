@@ -1,8 +1,8 @@
 /* Real gameplay screenshots from Google Play Store HTML pages
-   Auto-regenerated: 2026-04-27T12:36:04.820Z
+   Auto-regenerated: 2026-05-11T10:49:17.631Z
    Source: scripts/rebuild-screenshots-playstore.js
    To refresh: `node scripts/rebuild-screenshots-playstore.js`
-   Backup: screenshots.js.bak.1777293254828 */
+   Backup: screenshots.js.bak.1778496460317 */
 
 const screenshotMap = {
   '329218549': [
@@ -118,20 +118,20 @@ const screenshotMap = {
     'https://play-lh.googleusercontent.com/eVKpqCHud8NHqRQ8kcik_C3SmaPxDIM5BIFPn2NMC_QKLCJQ1UzJoYlGycTmgdp-t4M=w1920-h1080-rw',
   ],
   '512939461': [
-    'https://play-lh.googleusercontent.com/O3EjYrM6WZAHfA9b2iKDkGqdwsAhnXX9skv656BJF_MgiIqTrkk_whMT8Ilu9gKg9Q=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/vf0kHpJoU4NNq-q9Y1NAFxS75GwWVlWRGLU_unWoQtgyDGxXkcTH8U6q2BzJ549e3t_A=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/c5-xYVdv7Rro1NJSRKbne0ufAB51BH06TmPOZpTQfSAy4RLRXWF_ODQ1LE-ceQYliA=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/rUaorLrkStE86-Sdr2ZBNZNbAIqQiuPjAap2LtVDpdPderXGjdKNIcKBsgx6wJd5KXM=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/VNoG5IycsQPFNwKfMzl3osJm4weqZDJq6zECehAg8l5NiNBaItNJnfbk6gjCp8iH-1c=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/p5lyxRBaCLiz9wruLetW6iCcS5ZpYNzWKD42lZPpE71bpCS2yUmEVfoVzJKE4L6INkaD=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/8_iAV7tp328_hltbxuAkPZpyM4PGQ3j53OlYjOd3QNmrO4AiYoxThNP1MOOml-jjGLVD=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/nROC-acItjkpBagovVdMRPZ_p10v6d3Ukd5hiodCBdfy8J6vUGH1iQANw8SmtznZkLg=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/Dxhec0Po9-QakYX3IcB4qmt-veCDwzB_QdmdGyaAGAnyohTaktvRY0h0elaDNkquxQ=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/u3Z068tgi7uK4DujQMaQfTxENC0cgugTsUnyubyH8a23j0K4CB4LSE-G7poLrnnS8Mw=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/WfnPo1YTG5YKpu2lL6hxxYtK_6FFxaKUduTOjHFLnPseHXYgTxmUiKDGa4UM7vWcNVbd=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/dXNY-PlXbiaeyZSks57Fol3San1inpNjM9Ziy14bvkNBGqul-WkFM9cV1WGe96RIZBE=w1920-h1080-rw',
   ],
   '525818839': [
     'https://play-lh.googleusercontent.com/KC9U_JTCQ3uArYhXfuptlx6WCHUE_FTUCCxJiGb_ya9OQooWjtD4P6RNnVKbOf84JK6BQh3Fpu0vjm2Fs1q2SdU=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/I-n_L6jD7rhQ7lfMIew7MLFKKJvYuR8x9L0RELZcdPTqH36xoWv5_jzCjleF4wOQxA=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/ZhMO9yALynoRfboDEWgYrtSeWzrLqrTZK4VFk2bOkVskP10V4MAbEY2sseIHiHHJ93VSLNgiWMTbQN6BjK9Ghg=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/5tYSBicgStHCrTR6cyQ_-RXFHqEfSjem8e6X0J9eiCtu1edXs_ckJqOrh4bXEKFUrA=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/xyv8Zo7cb_v_3bon99F4DM0GcPA9I-hNSqbQoJTi1EG8H-2hcLAlr0Yqs9MgZI04IsE=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/HdU0_iReSe5Ujb5Arm4Tw6_DD7AHHO0ZJ06ODh2IhgSRfZIhVDmDYMEaazrMCw8Ksw=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/3pM8V_L0XjZrhMhSdekiehP6yShfBPiHKWZO5dXzNyxdPvfdtFd73eluZhX5DcSVmw=w1920-h1080-rw',
   ],
   '529479190': [
     'https://play-lh.googleusercontent.com/bmKmkqvuqaPNlr7dkBg7n6PdFNx9A740Dw_EeBcPQM53nlKCMIjY3dp9VlToNJzfRDcUxJ77e7cLdZoSyhWa=w1920-h1080-rw',
@@ -518,12 +518,12 @@ const screenshotMap = {
     'https://play-lh.googleusercontent.com/IBBiOLQCANgZ1oKD8oIfSnqEEflQRx8DmcGEax18uR5gxJhrjbusW1I4WWpyD8BxGa4=w1920-h1080-rw',
   ],
   '927006017': [
-    'https://play-lh.googleusercontent.com/NqIKkGU2SpqEjc2zcxDSm-TJVXhlTivPs_vhzrRmyon43sjVsUefg4KwvS1naU6nXg=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/rdCrpcizPs932ZTAxZ2h6Jx17bMXKS1j5VH7PHWuhkesOC5fxzdaknyY9r0NHTO9h1M=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/OGnnjE5M5qOOEYYpbwl616HjoEFlytCSSozcP6NmkcXcb4zq30fw3bzvddfOs_27jwI=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/k-_dC99jDqtaOxG0dlSeCiMCGogXGQhWiwxvxS8lcyGkK19vGnsuq8e1F65TJnBOhtk=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/ojmUd_tFiQGE4r_W0G_MDbF4Y6vN381FKCr6F03DyETGgUb5UoAufm4Tvf7MRAS5ewk=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/H0QK0RJSoTCAvYN5JyaS4kJkmuUMtzOajfXMgdtQ15ZKjhyQexgVsc_pHEn181M78Oho=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/-LDpH903O8Vq4BgAd5ygLa4anWPGh3jSL1K0zTH0WOtm4muqLVak8Eg8ldavUyASzw=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/KcbGhPsZpOtQ6PWgv8o39KYe_WCRoo8htTMAzkSiv_lZ4-JYLRdDUFvfiNdYlmt_ukzu=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/VIfq4OeFnVTkiaHwfR2b1XxCT_sBxRZF-W6kpLAEUv8E64uYnxVrnra3La365JELtDH3=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/STcYkzUn6gb31GqzdTaaM6eJf7Oj6xcO-RWqa47zpvo8_f0A7CvkegpIbno6X2KANw8=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/_j7tJQm8uYvr7GBlggUM2KmjJ24jf8_qpKff2LGgsVFlADXzrDVih0lcrgjVEL81vGi4=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/tg_xp2ZdxvedAmk9c0luHONsbNCXVC6IMO4jZ3psb4PaJ4mlRsLiOlEj2E6x3C88wX0=w1920-h1080-rw',
   ],
   '930574573': [
     'https://play-lh.googleusercontent.com/D4bld-QJvLlbABN4fj4gbkTOnnkOqCWTJauTtrdV6oejHaQ5RuJy1MRj2Rud9hzAXQ=w1920-h1080-rw',
@@ -1013,7 +1013,7 @@ const screenshotMap = {
     'https://play-lh.googleusercontent.com/Tm3rPfEl4W1Qgf6Wmi6_J4QiDVqIuy0NSMAINMog2KEn4woXdpcq6sadpB8ryVYECeg=w1920-h1080-rw',
   ],
   '1330123889': [
-    'https://play-lh.googleusercontent.com/-it7POL4c15WYEGFf71h3WVNPSzltmaSKtLAXZpowStJQaECeFoSzjbxFPJhmPygv_s_T_VYG498beu3NvKdiR0=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/oQ-6XbAl2603wUr_SU8mhYzaU_svMbevd64CNkzRkczmleGFljFILuFPwrooZ4KwqYFcMXF321zf2z9avfNLBQ=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/zOwTH3MPj-4A_HpnANJBTboiUPhivV16OfxEbz5fZ8oHVH2OUlNU7nvyaqrhGSX1aPAKLsoCehLvxd_ZQvEGkg=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/iBZX4zEHnRKTHiVCRyB_lF6jVh1vdGHvyfnxe-hLEd2qEC2tEsaoq-7BQLwZFAr0QIk1iBC6kvNdvp9yp6UHq7M=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/vvkPFbSBbfJvF-IyiF7lRq7B1-r4sg0LIc4HLEQhvYaW6NAZFhRTFYtLTYjGXscPWk7st_w60WwE0ydh-vuRFw=w1920-h1080-rw',
@@ -1143,10 +1143,10 @@ const screenshotMap = {
   '1389111413': [
     'https://play-lh.googleusercontent.com/WgFCSB1sH7x1Sb_F0YfO_mJ0BBruocrVIXmycvC79ZRni3Ka1HHrwmzeg4lMCp8pz_rl=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/oN5vOksMJapSksdzwPKzadxbidyrptv20VeDcvOFPVXYbgwqGxJu_s8FobH1uGhAvg=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/HPo8xQXwLhIiIDvL_Mocn6NI-wNeqJoc4uJtcnzHxq_soAQob62E_X_xEQClpDgf8dg=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/Ojzwuoer2x7yy96Ytrn31m-IvvSrVMkjff8sUqRqx_TpfgRR6DxU6LlRZz8V_yjDYcM=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/jqFmqA3eezldzW2uDfEDo9JCEvmWude2-9ppJquU2BBpamSaqsBALrZKVL6XpxpodBfD=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/p_XdmYqMguTzgnyhN6KuOI5h_4tLPBrUY40_iTHBaT4IViuXNLjokDu90GHFLPkeLUA=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/HPo8xQXwLhIiIDvL_Mocn6NI-wNeqJoc4uJtcnzHxq_soAQob62E_X_xEQClpDgf8dg=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/J-1L9TFwmzb1SG9SZTtSf0G7v_uwP62FR0hbJedbIUYKvTWftGQbvJWPZ1V40PIweH-C=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/Ojzwuoer2x7yy96Ytrn31m-IvvSrVMkjff8sUqRqx_TpfgRR6DxU6LlRZz8V_yjDYcM=w1920-h1080-rw',
   ],
   '1397824035': [
     'https://play-lh.googleusercontent.com/WgeSQXVJwpj60Qbzx4VKSPfGej1ifdo7MsKrHerivUfmkLf0wUGpKakIy9QHZad_acS0=w1920-h1080-rw',
@@ -1468,12 +1468,12 @@ const screenshotMap = {
     'https://play-lh.googleusercontent.com/zeLjDg7Cfg7qdvpxFXCF49eJd9K8DU2z_fYjHr-nprpjyU11PctD5ceyLS3dXnT7tUk=w1920-h1080-rw',
   ],
   '6741568655': [
-    'https://play-lh.googleusercontent.com/5IcUgwRXnLRUCa6On2L3F-U8cIA-IVSTN17Ol6wUbpOQxjfdSQ8apeiFrfLue0OI-i9K7ZaPN-2LzgXfdxws2Q=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/K_q5_ebz7b2CEDMfjIbAA1hjI3PT8maYoZYUSTkkbTT-KaG69fp4uVTn4uOu9AO6owP36DQ0K2sm8cL-T7R0Wg=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/AQZjYtcAhrMhQ6YrZwhySoU71HwJt1QLISsWlWVGka6N2EsYucMngC53rsKXA-oc9N7EyeYCljAWJgqI3uDv_Cs=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/cNEdPiK66kFD30S3MXD3tEYhcBt6Y3zMb1rH-7ud1H5PascBhRXmLxo2yryUKkYS_49we68RFdalTL9TsV1e6Q=w1920-h1080-rw',
-    'https://play-lh.googleusercontent.com/k8sEaOXqH75DlY7olmWurGbAOEXLq0MJRa29YC378EnaQ233vxnj0old8Nw3oCmaJIEQGAndaZxlIQk8pdc-Bw=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/BA3WTNcbZ4ijPqzK14ho-plKHdexI4--t0XrEzPAO2-IrPBZZGmkQUgTFZBRfMv9UULcxH5wJfXlGS0vfO7xnA=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/pGAh20lPi8KrEfetP8d4z3xOM5SqOsXEBF18Z1Dye8H81fgnj9zAFeFTtOJTa8Z44giOcJzX0_me63JATs5E=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/Npo2dCHzlutIU6IMP-E6Whe8iPJaQXrmD7qF5Tvot8B3tenun6zBZjzCE_OkzpWDuAYUKa0s98CN2oC7qeYduQ=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/CyHazJjEOTPh2_4XDG6PNuC1mxVjQtkeqZS6u2pedHYNjtCARaSYVH3vcjydar9-l6zy40scQD12rO32mK2ngw=w1920-h1080-rw',
     'https://play-lh.googleusercontent.com/dE1VzLz69QnXJCmPIdgPDUr9Wnj44ZmNuFqop5aCKF5iBe8q-j2g5DXIklaVbojo-3ee3G0j_9xBICD-z7v1MH0=w1920-h1080-rw',
+    'https://play-lh.googleusercontent.com/1twf24D3YAlO_P2_NmiGEreNxMTleNjO3fze0PjVeKcq2vDxnl759SNVAZdgPzCecrbANmbq3eBq6Krpi_qddg=w1920-h1080-rw',
   ],
   '6483539426': [
     'https://play-lh.googleusercontent.com/Me7w2pV0BaeglOkZ7JalMaGL4fZs0DK_UmQ1aFR4HPzVCduG3Xskm5oEkE_aBp2T9fRP5tvd34c56ZEdeLhp=w1920-h1080-rw',

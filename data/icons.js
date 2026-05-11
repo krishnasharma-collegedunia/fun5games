@@ -1,5 +1,5 @@
 /* Real square app icons from Google Play Store HTML pages.
-   Auto-regenerated: 2026-04-28T07:25:56.680Z
+   Auto-regenerated: 2026-05-11T10:44:44.028Z
    Source: scripts/rebuild-icons-playstore.js
    Keyed by apkg. games.js consults this first, falls back to
    the original Apple CDN URL if no Play Store icon is found. */
@@ -44,7 +44,7 @@ const iconMap = {
   'com.halfbrick.fruitninjafree': 'https://play-lh.googleusercontent.com/eJ9OJnbRer1jjg5ZeNAnTXKcGd2B_NEqxCp2UsefcCABeFBaj_pNl_WKYBjup2GVGGc=w512-h512-rw',
   'com.fullfat.deerhunter': 'https://play-lh.googleusercontent.com/gSGFRBPuwDAr1uUynhTh-uuwiqBBv7c9Nfke_aovoPIAhU1_wU0fNjkRpaMF_0Hhz6E=w512-h512-rw',
   'com.supercell.hayday': 'https://play-lh.googleusercontent.com/JS_D56z98J--k7A4vnzdnLlyNyBPp3tEPDXn8bYZo_goQY5j7GS7bNAcgOIR_2aVBWNJvXoLLEMNxkugEIog2w=w512-h512-rw',
-  'com.firsttouchgames.smp': 'https://play-lh.googleusercontent.com/THIRjxWddZx4S_zMpKf_dAJwRddQkgCi0hak6u2cPQR3bcVdr0OzPbcQI2sGxcbd88A=w512-h512-rw',
+  'com.firsttouchgames.smp': 'https://play-lh.googleusercontent.com/6da6-O65WJ674kVxvm2ZFrbaygjS-kKiXO6QmVb7wVru9AlPJay90JykpGsHQMQfifes1Ft6J_1M_ykbhRXC=w512-h512-rw',
   'com.outfit7.talkingtom': 'https://play-lh.googleusercontent.com/m2H0K49W3XwG5N3nM4VvqHxPwdvb3-ExNhsSof2FU0o5OmG2UtsocAX6-HSTajJHCqKo8a1Gh6v-hrkfVfmWlA=w512-h512-rw',
   'com.miHoYo.GenshinImpact': 'https://play-lh.googleusercontent.com/YQqyKaXX-63krqsfIzUEJWUWLINxcb5tbS6QVySdxbS7eZV7YB2dUjUvX27xA0TIGtfxQ5v-tQjwlT5tTB-O=w512-h512-rw',
   'com.moonactive.coinmaster': 'https://play-lh.googleusercontent.com/lja_bcS9SXsaK4x_q0rXuiqf3CIIwfy8QveRWfW5MEaAPOST_auDLuzWMyMUrBzi0sI=w512-h512-rw',
@@ -57,7 +57,7 @@ const iconMap = {
   'com.robtopx.geometryjump': 'https://play-lh.googleusercontent.com/ixHXzBWPmmKWIBxDMfjbIXK10UQCTDvIYOcs_uLXHCRbdsz2siJFYfb7MqckU8eC3Ks=w512-h512-rw',
   'com.fgol.HungrySharkEvolution': 'https://play-lh.googleusercontent.com/6Ij3BrGOfLbkwxdB_SSX8gEvOx68QQC9IPzhmZLddxbklr1yzblPj8MYEf2XUR7n9A=w512-h512-rw',
   'com.halfbrick.jetpackjoyride': 'https://play-lh.googleusercontent.com/3e_iyy1dolGSHqKFmwsao8SiMmqOtCuwD4CyKToLHoK34cchcH5PlG2VhOoE2_j-7FMH=w512-h512-rw',
-  'com.chess': 'https://play-lh.googleusercontent.com/a7R5nyeaX8lIEWdBOxjlvbyq9LcFwh3XMvNtBPEKR3LPGgdvgGrec4sJwn8tUaaSkw=w512-h512-rw',
+  'com.chess': 'https://play-lh.googleusercontent.com/PMZjdJevtibcTxD1nIRbDvdsy6a-dJ1oUwODVaufNnjxzKhd4dDFiL67u2jldXtGBwvB=w512-h512-rw',
   'com.nintendo.zaka': 'https://play-lh.googleusercontent.com/Nhdcc77MHYfXR9LoVhhkpnKbhwpZpCLKfl8dUwVhyqgflBQ5ROBtLsn_2fIongMYeoo6=w512-h512-rw',
   'com.ea.game.nfs14_row': 'https://play-lh.googleusercontent.com/rDAmDCGhyX7FcXYJcR0QrcO04uWgdiQaiWw6oA3T93oK4Xq8qOof0-J_qtw2XFYpKg=w512-h512-rw',
   'com.supercell.boombeach': 'https://play-lh.googleusercontent.com/y_Dr51TrM3NfJO-bFECbGVXsjfFYo-6YjiJfIQwyNBX6VdBW8H8eSEZzpCXcGKKByyw=w512-h512-rw',
@@ -66,7 +66,7 @@ const iconMap = {
   'com.nytimes.crossword': 'https://play-lh.googleusercontent.com/QXDGA4zkli9V9-xPs3fT6qRjG7zSLpS0JlBWtvUP-ZxRHy7tmlIrzvzgAqgLru_brQ=w512-h512-rw',
   'com.ustwo.monumentvalley': 'https://play-lh.googleusercontent.com/kkm-E17Pwoy08iOkQc5nFScTH_9ly7cArfgO02OLiTjWy3wpehqltrXWKOsuAfVnUjM=w512-h512-rw',
   'com.nautilus.realcricket': 'https://play-lh.googleusercontent.com/sslqqDsWM8kFbjCJp_4xiow5aBwsTBTeKxJ2ichKdsOeSHnDtPQt5sKqZlwLrK2wtQ=w512-h512-rw',
-  'jp.konami.pesam': 'https://play-lh.googleusercontent.com/o-iscF0u9uAm9jaems25nNUw3cIgxrzIELVTy-DPKb3CxN0_HLBcaWoeetZca_BBOp_u_NXeyQKz0nJkXiFMkA=w512-h512-rw',
+  'jp.konami.pesam': 'https://play-lh.googleusercontent.com/nMrUsuhrNhajMLRvLNCF0nZCAhXQQP7NuUgkYr74Am4vM8MLhU2VXAw1FGI652pHbx11BppFPLRNOmjgmy7mmg=w512-h512-rw',
   'com.miniclip.eightballpool': 'https://play-lh.googleusercontent.com/bPz1guJ6FHF3oIOEy3KqwpaDDKO-hLRaZoyzmM8bLFLN8fWm6L0_EuUnkwv9iqPo3Ag=w512-h512-rw',
   'com.activision.callofduty.shooter': 'https://play-lh.googleusercontent.com/cfGSXkDwxa1jW3TlhhkDJBN16-1_KEtEDhnILPcs9rXcC25g14XY6MRGCtlXHFHs0g=w512-h512-rw',
   'com.fingersoft.hcr2': 'https://play-lh.googleusercontent.com/UGKh6u0gA0GLh39qG4kXKK3Vu3FEAUEdXWAK55pjLTGiJI2vLQVHzIPP6CVo_ZP0dw=w512-h512-rw',
@@ -74,7 +74,7 @@ const iconMap = {
   'com.habby.archero': 'https://play-lh.googleusercontent.com/10lQOLEEPGdJYq_LZr1T60Bc8OlxTwP76N0TPJLQjiK-oYSf92Ucpd2bS47WKqY2Tq0G_E0vlwfeYIDB1yfX=w512-h512-rw',
   'com.chucklefish.stardewvalley': 'https://play-lh.googleusercontent.com/He92papZcOmkgTi1sLHXQQb02aoyRtJ8ml96njM_cSAcpHhILvxMjhLix4mYEIKXPq4=w512-h512-rw',
   'com.amelosinteractive.snake': 'https://play-lh.googleusercontent.com/NG4sZTG49qpKGd3tUxdoxbW2EXSp1-nAxcYr3XCO0SO1WO5P2sWkk0sBtUGZPYzPOU0=w512-h512-rw',
-  'com.igg.android.lordsmobile': 'https://play-lh.googleusercontent.com/HAl_1K3O_qPC6vuDK4hTQRl8KxJbd17ifuICeOizsMj2lGdh9s0ReFn_CXYiW-oBvU7O6-DK2_eR6CWbAhbS0A=w512-h512-rw',
+  'com.igg.android.lordsmobile': 'https://play-lh.googleusercontent.com/9gTDGNC_Ly7dWNWcfZtnBKdIY8a9REzuWMCC89ycYugXGvWgAPDo4GgnyitrX2LpMqE-1yb_2CDFugre9QVKfg=w512-h512-rw',
   'eu.bandainamcoent.pacman256': 'https://play-lh.googleusercontent.com/KK7mP_etdtFFzdNBa6XTAenfnXEXiGTtqT8Lv4bffra99bT4e_JvK6n5Xp5rvEVQZEA=w512-h512-rw',
   'com.kongregate.mobile.adventurecapitalist.google': 'https://play-lh.googleusercontent.com/yAKZV2kx81ojqMmNzXVRQQuaDXpqYoK7ZHLWRHy03HrCnQ5p6W5HaK9tQwcEjzvms0I=w512-h512-rw',
   'com.playdead.limbo.full': 'https://play-lh.googleusercontent.com/FJ8e7NYhyjzrjuROUSpigJ1TQNnZKUDh6AZc1SFjiD665bZsxr_7zus0DzlHIrC6Lgk=w512-h512-rw',
@@ -119,7 +119,7 @@ const iconMap = {
   'com.miniclip.plagueinc': 'https://play-lh.googleusercontent.com/qLgeusnY6S6JC_qB7s1qz5rPzrzMIuiXDvQN2R9qZhuQb3xTw4adMD0-Ktk12LrLwFB_wn_ftNVvLDsixSBeGQ=w512-h512-rw',
   'zombie.survival.craft.z': 'https://play-lh.googleusercontent.com/1NJaEmZal-WWfNTcpQkpO0Z0U4SbLMcit2K3DDW2_BQ7OJkyn1at4zDAgBGCfZLLubDd=w512-h512-rw',
   'com.ngame.allstar.eu': 'https://play-lh.googleusercontent.com/3Qs6i05oAAUtjzwZCi0AJ9FpxT85w5BWCedIXCrsVKLTGOCcnP2B5yOVoheGSBZpj8z9=w512-h512-rw',
-  'com.mobile.legends.usa': 'https://play-lh.googleusercontent.com/sJtCcM4BsuwJbei9PSmBprb6V9_hdk1RHRSbccLD0xcM-klrZVVQ2RuWT2iOfAPo8dQZO1iwO7DGnwmYpsKJuQ=w512-h512-rw',
+  'com.mobile.legends.usa': 'https://play-lh.googleusercontent.com/H3Nsxu0B3PyIOb_KbHNfFPJ5i60QuqhBuP-uYYlDu_rh0Dum8NM717QMRbIF4bwyqrgKuE20Gu5eRzWMKZTE=w512-h512-rw',
   'net.mobilecraft.flickshoot2': 'https://play-lh.googleusercontent.com/yVmUarMklQ7Jc3ksQww5rIsI7MajefKc_KaDnwzNyPgS4f1VOFwyDe3VnPl2GuSCfwI=w512-h512-rw',
   'com.noodlecake.altosodyssey': 'https://play-lh.googleusercontent.com/l4PdRz_ZURsgohnf9z-4uN2eLgnDTAZXPfcQVo7gNoqR4rYqI0Ed2BQVH51sa_KDNUU=w512-h512-rw',
   'com.nianticlabs.pokemongo': 'https://play-lh.googleusercontent.com/Qf2SJGpLxd9eu4CLWRrh2tfmmkncg7TQ2RNr44tWO07EBfhfMs4CHlizioym11Vb6RmfIWCNz6FNsOgHj_5dMA=w512-h512-rw',

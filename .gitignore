@@ -9,3 +9,6 @@ node_modules/
 .claude/
 .vscode/
 .idea/
+
+# Auto-generated backups from rebuild-screenshots-playstore.js
+data/screenshots.js.bak.*
