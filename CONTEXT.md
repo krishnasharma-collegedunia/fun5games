@@ -37,16 +37,24 @@ git log --oneline -10
 
 ## 1. What This Project Is
 
-**fun5games.com** — mobile-game discovery portal modelled on bajgames.xyz.
-- 200+ games, each with a detail page (how-to-play, tips, FAQ, screenshots)
-- 8 category landing pages (Action, Casual, Puzzle, Racing, Strategy, Sports, Arcade, Adventure)
-- 3 editorial landing pages (Top 15, Banned in India, Trending April 2026)
+**fun5games.com** — **content-arbitrage** mobile-game portal modelled on
+bajgames.xyz. The model is deliberately pure:
+- 200+ games, each with a detail page (how-to-play, tips, FAQ, screenshots) —
+  these are the **Taboola landing pages** and the **Vertoz ad slots** live here
+- 8 category pages (Action, Casual, Puzzle, Racing, Strategy, Sports, Arcade, Adventure)
+- **No editorial landing pages.** The three earlier ones (Trending April 2026,
+  Top 15 India 2026, Banned in India) were removed 2026-05-11 because the
+  arbitrage model doesn't need them — bajgames sends Taboola traffic straight
+  to `/game/*` URLs where ad inventory sits. 301 redirects preserve any earned
+  signal (see `next.config.mjs`).
 - Operated by **Mediafinity Adtech Pvt Ltd** (CEO: Sahil)
 - Domain registered ~April 2026, currently <1k weekly visitors
 
-**Goal**: Drive traffic via Taboola native ads → onboard Vertoz (Google MCM partner)
-→ Monetise with Google Ads / AdX via Vertoz → Eventually direct AdSense (Oct 2026
-when 6-month India domain age rule passes).
+**Goal (arbitrage loop)**: Taboola native ad spend → cheap pageviews to
+`/game/[slug]` → Vertoz / GAM serves Google Ads in the ad shells on those
+pages → revenue per pageview > cost per click → profitable arbitrage.
+Eventually direct AdSense replaces Vertoz when the Oct 2026 India 6-month
+domain-age rule clears.
 
 ---
 
@@ -117,10 +125,10 @@ app/
   category/[slug]/page.js              8 category pages
   search/page.js                       client-side search
   about|contact|privacy|terms|disclaimer/page.js
-  trending-mobile-games-india-april-2026/page.js   "trending" landing
-  top-mobile-games-india-2026/page.js              "top 15" landing
-  games-banned-india/page.js                       "banned" landing
   api/indexnow/route.js                on-demand IndexNow ping endpoint
+  /* Removed 2026-05-11 (arbitrage pivot — see §1):
+     trending-mobile-games-india-april-2026, top-mobile-games-india-2026,
+     games-banned-india. Permanent 301 → / in next.config.mjs. */
 
 components/
   Header.js              sticky header with logo + search
@@ -147,8 +155,8 @@ data/
   icons.js               app icon URLs per apkg (Play Store sourced)
   gameContent.js         per-game how-to-play / tips / features / FAQ generator
   gameSeo.js             per-game SEO enrichments (BGMI alias, etc.)
-  trendingApril2026.js   trending landing page data
-  top15India2026.js      top 15 landing page data
+  /* trendingApril2026.js + top15India2026.js deleted 2026-05-11
+     in the arbitrage pivot. */
 
 lib/
   analytics.js           central GA4 event helpers

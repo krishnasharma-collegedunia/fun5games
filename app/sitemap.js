@@ -9,27 +9,11 @@ export default function sitemap() {
   const staticPages = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
 
-    // Landing pages — high-intent editorial content, ranked higher
-    // than boilerplate static pages because Taboola traffic and
-    // organic search both target these URLs.
-    {
-      url: `${SITE_URL}/trending-mobile-games-india-april-2026`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${SITE_URL}/top-mobile-games-india-2026`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/games-banned-india`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // Content arbitrage model: Taboola sends traffic to game detail
+    // pages (the equivalent of bajgames.xyz/game/*) where Vertoz ads
+    // monetise. Editorial landing pages (trending / top-15 / banned)
+    // were removed to match this strategy — every URL exists to host
+    // ad-bearing game content.
 
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },

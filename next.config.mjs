@@ -29,6 +29,32 @@ const nextConfig = {
     // Cache optimized variants for 30 days at the CDN/proxy layer.
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+
+  // 301 redirects — the three editorial landing pages were removed
+  // when we pivoted to a pure bajgames-style content-arbitrage model
+  // (Taboola → game detail pages → Vertoz ads). Their URLs were
+  // submitted to Bing / IndexNow / Google so we 301 them to the
+  // homepage to preserve any earned crawl signal and avoid 404s
+  // for any external links that might exist.
+  async redirects() {
+    return [
+      {
+        source: '/trending-mobile-games-india-april-2026',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/top-mobile-games-india-2026',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/games-banned-india',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
