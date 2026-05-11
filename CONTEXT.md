@@ -177,8 +177,11 @@ public/
 
 ## 5. Current Ad-Network State
 
-**Right now: ZERO third-party ad scripts.** The site is in pre-monetisation phase
-awaiting Vertoz GAM/MCM onboarding.
+**Right now: ZERO third-party ad scripts**, but **empty ad-banner shells render**
+on game detail pages (bajgames.xyz-style placeholder — "ADVERTISEMENT" label
+above a blank 250px-reserved slot). Pre-monetisation phase awaiting Vertoz
+GAM/MCM onboarding; when Vertoz delivers the AdSense client ID the same shells
+paint real creatives without code or layout changes.
 
 ### History (chronological)
 1. **AdSense** — applied for, rejected (India 6-month domain age rule)
@@ -186,7 +189,8 @@ awaiting Vertoz GAM/MCM onboarding.
 3. **Adcash** — integrated (Autotag + Banner zone 11198678) then removed
 4. **Monetag** — integrated (Multitag zone 230751) then removed
 5. **Vertoz** (Google MCM partner) — onboarding in progress, see §6
-6. **Current** — clean editorial site, no ad scripts at all
+6. **Current** — no ad scripts loaded, but empty bajgames-style ad shells
+   render on game detail pages (top + below-metadata, both `baji-bottom`)
 
 ### When Vertoz finalises
 1. They'll send a JS GAM tag → drop into `app/layout.js`

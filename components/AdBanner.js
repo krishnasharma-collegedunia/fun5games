@@ -74,13 +74,12 @@ export default function AdBanner({ type = 'baji-inline', className = '' }) {
 
   const hasAdSense = Boolean(adsenseClient && adsenseSlot);
   const hasAdcash = !hasAdSense && Boolean(adcashZone);
-  const hasAnyAd = hasAdSense || hasAdcash;
 
-  // No ad source configured → render nothing (no empty placeholder).
-  if (!hasAnyAd) {
-    return null;
-  }
-
+  // Always render the shell — matches bajgames.xyz exactly. Empty
+  // .banner-ad div reserves 250px of layout space so when Vertoz / GAM
+  // / AdSense paints in the slot there's no CLS. While no provider is
+  // configured the slot stays blank (no border, no fill) under the
+  // "ADVERTISEMENT" label. CSS in .banner-ad / .ad-baji-* handles sizing.
   return (
     <div className={`ads ${className}`}>
       <div className="ads-tips">ADVERTISEMENT</div>
