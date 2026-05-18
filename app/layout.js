@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 // infrastructure stays env-gated for the day Vertoz issues
 // publisher ID via MCM.
 import AdSenseScript from '@/components/AdSenseScript';
+import GptLoader from '@/components/GptLoader';
 import ScrollTracker from '@/components/ScrollTracker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
@@ -163,10 +164,12 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <ScrollTracker />
-        {/* Ad slot reserved for Vertoz GAM tag — drop in here when
-            their JS snippet arrives. AdSenseScript stays env-gated
-            so it activates the moment Vertoz issues an MCM
-            publisher ID. */}
+        {/* GAM (Google Ad Manager) bootstrap + Interstitial — exact
+            bajgames.xyz setup. Renders nothing until Vertoz delivers
+            the GAM network path (NEXT_PUBLIC_GAM_NETWORK). AdSenseScript
+            stays env-gated as a separate fallback for the day Vertoz
+            issues an MCM publisher ID instead. */}
+        <GptLoader />
         <AdSenseScript />
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />

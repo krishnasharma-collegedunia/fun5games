@@ -5,7 +5,7 @@ import { games, getGameBySlug, getRelatedGames, getSidebarGames } from '@/data/g
 import { getGameContent } from '@/data/gameContent';
 import { getGameSeo } from '@/data/gameSeo';
 import Stars from '@/components/Stars';
-import AdBanner from '@/components/AdBanner';
+import GamAdSlot from '@/components/GamAdSlot';
 import Sidebar from '@/components/Sidebar';
 import CtaSection from '@/components/CtaSection';
 import ScreenshotGallery from '@/components/ScreenshotGallery';
@@ -200,8 +200,8 @@ export default function GamePage({ params }) {
 
         <div className="detail-layout">
           <div className="detail-main">
-            {/* AD SLOT 1: top banner — above game info (baji position) */}
-            <AdBanner type="baji-bottom" />
+            {/* AD SLOT 1: top banner — bajgames topAds / Native_01 */}
+            <GamAdSlot slot="Native_01" />
 
             <div className="game-info-header">
               <Image
@@ -247,8 +247,8 @@ export default function GamePage({ params }) {
               </div>
             </div>
 
-            {/* AD SLOT 2: below metadata row — above CTA (baji position) */}
-            <AdBanner type="baji-bottom" />
+            {/* AD SLOT 2: below metadata, above CTA — bajgames centerAds / Native_02 */}
+            <GamAdSlot slot="Native_02" />
 
             <CtaSection game={game} />
 

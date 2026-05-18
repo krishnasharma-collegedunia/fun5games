@@ -185,11 +185,25 @@ public/
 
 ## 5. Current Ad-Network State
 
-**Right now: ZERO third-party ad scripts**, but **empty ad-banner shells render**
-on game detail pages (bajgames.xyz-style placeholder — "ADVERTISEMENT" label
-above a blank 250px-reserved slot). Pre-monetisation phase awaiting Vertoz
-GAM/MCM onboarding; when Vertoz delivers the AdSense client ID the same shells
-paint real creatives without code or layout changes.
+**Right now: ZERO third-party ad scripts loaded**, but the full
+**bajgames.xyz-identical GAM (Google Ad Manager) scaffold is in place** as a
+placeholder. Game detail pages render the exact bajgames ad structure —
+"ADVERTISEMENT" label above a 310px CTR-safe reserved slot — in two
+positions plus an interstitial hook. Until Vertoz delivers the GAM network
+path it's pure placeholder (no gpt.js, no googletag, AdSense-policy-safe).
+The moment `NEXT_PUBLIC_GAM_NETWORK` is set it goes fully live with no code
+or layout change.
+
+**GAM scaffold (mirrors `play01.bajgames.xyz/game/<slug>` 1:1):**
+| Unit | Component | Position | bajgames equiv |
+|---|---|---|---|
+| Top banner | `<GamAdSlot slot="Native_01" />` | above game-info header | `#topAds` / `_Native_01` |
+| Center banner | `<GamAdSlot slot="Native_02" />` | below metadata, above CTA | `#centerAds` / `_Native_02` |
+| Interstitial | `<GptLoader />` (in layout) | out-of-page, on game-nav | `_Interstitial` |
+
+Same SIZE (970×250…320×480 + fluid, per-breakpoint sizeMapping), same
+LOCATION, same FLOW (cmd queue → defineSlot → IntersectionObserver lazy-load
+@0.25), same PATH (`<NETWORK>/fun5games.com_<unit>`).
 
 ### History (chronological)
 1. **AdSense** — applied for, rejected (India 6-month domain age rule)
@@ -197,21 +211,36 @@ paint real creatives without code or layout changes.
 3. **Adcash** — integrated (Autotag + Banner zone 11198678) then removed
 4. **Monetag** — integrated (Multitag zone 230751) then removed
 5. **Vertoz** (Google MCM partner) — onboarding in progress, see §6
-6. **Current** — no ad scripts loaded, but empty bajgames-style ad shells
-   render on game detail pages (top + below-metadata, both `baji-bottom`)
+6. **Current** — no ad scripts loaded; full bajgames-identical GAM scaffold
+   renders as placeholder (2 banner slots + interstitial hook), env-gated
 
-### When Vertoz finalises
-1. They'll send a JS GAM tag → drop into `app/layout.js`
-2. They'll issue an AdSense MCM client ID → set in VPS `.env.local`:
-   ```
-   NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX
-   NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM=XXXXXXXXXX
-   ```
-3. They'll send 10-15 ads.txt lines → replace placeholder block in `public/ads.txt`
-4. Rebuild + PM2 reload — done
+### When Vertoz finalises (GAM path — primary, bajgames model)
+Vertoz is a Google MCM partner — they provide a **GAM network path** (looks
+like `/22XXXXXXXXX` or `/129473952`-style). One env var activates everything:
+```
+# VPS: /var/www/fun5games-com/.env.local
+NEXT_PUBLIC_GAM_NETWORK=/22XXXXXXXXX
+```
+Then `cd /var/www/fun5games-com && npm run build && pm2 reload fun5games-com --update-env`.
+That single var makes `GptLoader` load gpt.js + interstitial and every
+`GamAdSlot` define its GPT slot + lazy-load — ad units resolve to
+`/22XXXXXXXXX/fun5games.com_Native_01`, `_Native_02`, `_Interstitial`.
+Vertoz must create those three ad units on their GAM network with those
+exact names (or tell us their preferred names → update `GamAdSlot.js` /
+`GptLoader.js` path templates).
 
-The `AdBanner` component already supports AdSense env-vars; setting them
-auto-renders banners on game detail pages without code changes.
+Also: replace the placeholder block in `public/ads.txt` with Vertoz's
+10-15 authorised-seller lines, then rebuild.
+
+### Alternative: AdSense MCM client ID (fallback path)
+If Vertoz issues a plain AdSense MCM publisher ID instead of a GAM network,
+the legacy env-gated AdSense path still works:
+```
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX
+NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM=XXXXXXXXXX
+```
+(`AdSenseScript` in layout + `AdBanner` component — both still present,
+dormant, unused by the game page which now uses `GamAdSlot`.)
 
 ### Affiliate / install-tracking (future)
 - All install CTAs on `/trending-mobile-games-india-april-2026` already carry

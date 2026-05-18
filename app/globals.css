@@ -635,6 +635,26 @@ button {
   display: none;
 }
 
+/* ------------------------------------------------------------
+   GAM (Google Ad Manager) slots — bajgames.xyz-identical.
+   .gam-slot is the reserved 310px CTR-safe container (its
+   flex/min-height come inline from GamAdSlot, matching baji);
+   .ad-slot is the div GPT injects and paints the creative into.
+   Until Vertoz is live these stay empty under the
+   "ADVERTISEMENT" label — exactly the bajgames placeholder.
+   ------------------------------------------------------------ */
+.gam-slot {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+}
+.ad-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 /* When the creative has loaded it becomes visible naturally — no
    extra CSS needed; the iframe inside is 300×250 by design. */
 
